@@ -216,3 +216,13 @@ footer {
   font-weight: bold;
   color: var(--cafe-medio);
 }
+
+.star-rating {
+  margin-top: 0.5rem;
+  font-size: 1.4rem;
+  color: #ccc;
+}
+
+.star-rating .star.active {
+  color: gold;
+}
