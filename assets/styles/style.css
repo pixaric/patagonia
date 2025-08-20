@@ -43,7 +43,7 @@ header {
   z-index: 999;
   background-color: var(--cafe-claro);
   box-shadow: 0 2px 6px var(--sombra-suave);
-  padding: 0.5rem 1rem;
+  padding: 0.3rem 1rem;
 }
 
 
@@ -59,6 +59,7 @@ header h1 {
   color: var(--cafe-medio);
   margin: 0;
   flex: 1;
+  
 }
 
 .menu-toggle {
@@ -196,6 +197,7 @@ section {
   max-width: 900px;
   margin: auto;
   border-bottom: 1px solid var(--cafe-claro);
+  scroll-margin-top: 80px; /* ajusta según la altura de tu cabecera */
 }
 
 section h2 {
