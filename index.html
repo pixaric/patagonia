@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cafetería PATAGONIA</title>
+<link rel="stylesheet" href="/patagonia/assets/styles/style.css">
+
+
+</head>
+<body>
+<header>
+    <h1>Cafetería PATAGONIA</h1>
+    <nav>
+    <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+    <ul class="nav-links">
+        <li><a href="#cafes">Cafés</a></li>
+        <li><a href="#bebidas">Bebidas</a></li>
+        <li><a href="#comidas">Comidas</a></li>
+        <li><a href="#alcohol">Alcohol</a></li>
+        <li><a href="#postres">Postres</a></li>
+        <li><a href="#desayunos">Desayunos</a></li>
+        <li><a href="#bocadillos">Bocadillos</a></li>
+        <li><a href="#picar">Para Picar</a></li>
+        <li><a href="#sandwiches">Sandwiches</a></li>
+        <li><a href="#hamburguesas">Hamburguesas</a></li>
+        <li><a href="#ensaladas">Ensaladas</a></li>
+        <li><a href="#pasta">Pasta</a></li>
+    </ul>
+    </nav>
+</header>
+
+<main>
+    <section id="cafes">
+<h2>☕ Cafés & Especiales Fríos</h2>
+<div class="menu-grid">
+    <div class="menu-card" onclick="toggleDetails(this)">
+    <div class="card-header">Café solo – €1,50</div>
+    <div class="card-details">
+        <p><strong>Alérgenos:</strong> Ninguno</p>
+        <img src="/patagonia/assets/image/logo/cafe patagonia.png" alt="Café solo">
+    </div>
+    </div>
+
+    <div class="menu-card" onclick="toggleDetails(this)">
+    <div class="card-header">Capuccino – €2,00</div>
+    <div class="card-details">
+        <p><strong>Alérgenos:</strong> Leche</p>
+        <img src="img/capuccino.jpg" alt="Capuccino">
+    </div>
+    </div>
+
+    <div class="menu-card" onclick="toggleDetails(this)">
+    <div class="card-header">Café bombón – €2,00</div>
+    <div class="card-details">
+        <p><strong>Alérgenos:</strong> Leche condensada</p>
+        <img src="img/cafe-bombon.jpg" alt="Café bombón">
+    </div>
+    </div>
+
+    <!-- Puedes seguir agregando más cafés con el mismo formato -->
+</div>
+</section>
+
+    <section id="bebidas">
+    <h2>🥤 Bebidas & Zumos</h2>
+    <div class="menu-grid">
+        <div>Agua sin gas – €1,50</div>
+        <div>Coca-Cola / Zero – €2,00</div>
+        <div>Fanta / Sprite – €2,00</div>
+        <div>Nestea / Aquarius – €2,00</div>
+        <div>Red Bull – €2,50</div>
+        <div>Zumo naranja / piña – €2,50</div>
+        <div>Zumo fresa / mango – €3,00</div>
+        <div>Smoothie fresa-mango – €3,50</div>
+    </div>
+    </section>
+
+    <section id="comidas">
+    <h2>🍽️ Comidas & Brunch</h2>
+    <div class="menu-grid">
+        <div>Brunch completo – €8,00</div>
+        <div>Cola Cao – €2,00</div>
+        <div>Chocolate caliente – €2,50</div>
+        <div>Té / Infusión – €1,50</div>
+        <div>Té frío – €2,50</div>
+        <div>Leche sola / con hielo – €1,50</div>
+    </div>
+    </section>
+
+    <section id="alcohol">
+    <h2>🍷 Alcohol & Cervezas</h2>
+    <div class="menu-grid">
+        <div>Chupito – €1,50</div>
+        <div>Ron / Ginebra / Vodka – €3,00</div>
+        <div>Baileys / Amaretto – €3,50</div>
+        <div>Combinado nacional – €5,00</div>
+        <div>Combinado importación – €6,00</div>
+        <div>Caña / Jarra – €1,50 / €2,50</div>
+        <div>Estrella Galicia – €2,50</div>
+        <div>Vino tinto / blanco – €2,00</div>
+    </div>
+    </section>
+
+    <section id="postres">
+    <h2>🍰 Postres</h2>
+    <div class="menu-grid">
+        <div>Tarta de queso – €3,50</div>
+        <div>Brownie – €3,50</div>
+        <div>Tarta de zanahoria – €3,50</div>
+    </div>
+    </section>
+
+    <section id="desayunos">
+    <h2>🍳 Desayunos</h2>
+    <div class="menu-grid">
+        <div>Tradicional – €4,00</div>
+        <div>Tostada con tomate – €2,50</div>
+        <div>Tostada con aguacate – €3,50</div>
+        <div>Pan tumaca – €3,00</div>
+        <div>Croissant – €2,00</div>
+        <div>Croissant mixto – €3,00</div>
+        <div>Croissant vegetal – €3,50</div>
+        <div>Croissant salmón – €4,00</div>
+        <div>Tostada jamón serrano – €3,50</div>
+        <div>Tostada jamón y queso – €3,50</div>
+    </div>
+    </section>
+
+    <section id="bocadillos">
+    <h2>🥪 Bocadillos</h2>
+    <div class="menu-grid">
+        <div>Lomo / Pollo – €4,00</div>
+        <div>Jamón serrano / York – €3,50</div>
+        <div>Vegetal / Atún – €4,00</div>
+        <div>Tortilla / Bacon – €3,50 / €4,00</div>
+        <div>Hamburguesa / Chorizo – €4,00 / €3,50</div>
+        <div>Salchicha – €3,50</div>
+        <div>Pan Tumaca – €3,00</div>
+        <div>Bocadillo XL – €5,00</div>
+        <div>XL Especial – €6,00</div>
+    </div>
+    </section>
+
+    <section id="picar">
+    <h2>🍢 Para Picar</h2>
+    <div class="menu-grid">
+        <div>Croquetas caseras – €5,00</div>
+        <div>Nuggets – €4,00</div>
+        <div>Papas bravas – €4,00</div>
+        <div>Papas locas – €5,00</div>
+        <div>Pan Tumaca – €3,00</div>
+        <div>Tiras de pollo – €5,00</div>
+        <div>Aros de cebolla – €4,00</div>
+        <div>Fingers de queso – €5,00</div>
+        <div>Papas fritas – €3,00</div>
+    </div>
+    </section>
+
+    <section id="sandwiches">
+    <h2>🥪 Sandwiches</h2>
+    <div class="menu-grid">
+        <div>Mixto / Vegetal – €3,50 / €4,00</div>
+        <div>Atún / Pollo / Bacon – €4,00</div>
+        <div>Salmón – €4,50</div>
+        <div>Jamón serrano / York / Queso – €4,00 / €3,50</div>
+        <div>Sandwich XL – €5,00</div>
+        <div>XL Especial – €6,00</div>
+    </div>
+    </section>
+
+    <section id="hamburguesas">
+    <h2>🍔 Hamburguesas</h2>
+    <div class="menu-grid">
+        <div>Clásica / Pollo / Vegetal – €5,00</div>
+        <div>Bacon / Queso – €5,50</div>
+        <div>Doble – €6,50</div>
+        <div>Especial – €7,00</div>
+        <div>Menú con papas y bebida – +€3,00</div>
+    </div>
+    </section>
+
+    <section id="pasta">
+    <h2>🍝 Pasta</h2>
+    <div class="menu-grid">
+        <div>
+                    <div>Spaghetti boloñesa – €8,00</div>
+        <div>Spaghetti carbonara – €8,00</div>
+        <div>Spaghetti al pesto – €8,00</div>
+        <div>Spaghetti con verduras – €8,00</div>
+        <div>Macarrones boloñesa – €8,00</div>
+        <div>Macarrones carbonara – €8,00</div>
+        <div>Macarrones al pesto – €8,00</div>
+        <div>Macarrones con verduras – €8,00</div>
+        <div>Lasagna – €8,00</div>
+        <div>Parmesana – €8,00</div>
+    </div>
+    </section>
+</main>
+
+<footer>
+    <p>&copy; 2025 Cafetería PATAGONIA · Santa Cruz de Tenerife</p>
+</footer>
+
+<script src="/patagonia/assets/js/script.js"></script>
+</body>
+</html>
