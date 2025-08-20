@@ -16,12 +16,13 @@ body {
   background-color: var(--crema);
   color: var(--cafe-oscuro);
   line-height: 1.6;
+  scroll-behavior: smooth;
 }
 
 /* 🧭 Encabezado */
 header {
   background-color: var(--cafe-claro);
-  padding: 1.5rem 1rem;
+  padding: 2rem 1rem 1rem;
   text-align: center;
   border-bottom: 2px solid var(--blanco);
   box-shadow: 0 2px 4px var(--sombra-suave);
@@ -29,8 +30,9 @@ header {
 
 h1 {
   margin: 0;
-  font-size: 2.2rem;
+  font-size: 2.4rem;
   color: var(--cafe-medio);
+  letter-spacing: 0.5px;
 }
 
 /* 🧭 Navegación */
@@ -66,11 +68,12 @@ nav {
   font-weight: bold;
   padding: 0.4rem 0.8rem;
   border-radius: 4px;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .nav-links a:hover {
   background-color: var(--cafe-claro);
+  transform: scale(1.05);
 }
 
 /* 📦 Secciones del menú */
@@ -82,51 +85,131 @@ section {
 }
 
 section h2 {
-  font-size: 1.6rem;
+  font-size: 1.8rem;
   margin-bottom: 1rem;
   color: var(--cafe-medio);
   border-bottom: 2px solid var(--cafe-claro);
   padding-bottom: 0.3rem;
+  letter-spacing: 0.3px;
 }
 
-/* 📋 Ítems del menú */
-.menu-item summary {
-  font-weight: bold;
-  font-size: 1.1rem;
-  cursor: pointer;
-  padding: 0.6rem 1rem;
+
+/* cuerpo de los demas elementos*/
+
+
+/* 📋 Botón del menú */
+.menu-item {
+  margin-bottom: 0.5rem;
+}
+
+.open-modal {
   background-color: var(--blanco);
   border: 1px solid var(--cafe-claro);
   border-radius: 6px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 0.5rem;
-  transition: background-color 0.2s ease, box-shadow 0.2s ease;
+  font-weight: bold;
+  font-size: 1.1rem;
+  color: var(--cafe-oscuro);
+  cursor: pointer;
+  padding: 0.6rem 1rem;
+  width: 100%;
+  text-align: left;
+  transition: background-color 0.3s, box-shadow 0.3s;
 }
 
-.menu-item summary:hover {
+.open-modal:hover {
   background-color: var(--crema);
   box-shadow: 0 2px 6px var(--sombra-suave);
 }
 
-/* 📄 Contenido expandido (si lo usas) */
-.details-content {
-  display: flex;
-  justify-content: space-between;
-  gap: 1rem;
-  padding: 1rem;
-  flex-wrap: wrap;
-  background-color: var(--blanco);
-  border: 1px solid var(--cafe-claro);
-  border-radius: 6px;
-  margin-bottom: 1rem;
+/* 🪟 Modal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  background-color: rgba(0, 0, 0, 0.6);
+  animation: fadeInModal 0.3s ease;
 }
 
+@keyframes fadeInModal {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.modal-content {
+  background-color: var(--blanco);
+  margin: 25% 15%;
+  padding: 0.2rem;
+  border-radius: 8px;
+  max-height: 6500px; /* 80% de la altura de la ventana */
+  max-width: 600px;
+  overflow-y: auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  animation: slideUp 0.3s ease;
+  position: relative;
+
+}
+
+@keyframes slideUp {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.close-modal {
+  position: absolute;
+  top: 1rem;
+  right: 1.5rem;
+  font-size: 2rem;
+  color: var(--cafe-oscuro);
+  cursor: pointer;
+}
+
+/* 📄 Contenido del producto */
 .info-left,
 .info-right {
-  flex: 1;
-  min-width: 200px;
+  flex: 1 1 300px;
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+.info-left h3 {
+  margin-top: 0;
+  color: var(--cafe-medio);
+  font-size: 1.4rem;
+}
+
+.info-right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+}
+
+.info-left ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.info-left li::before {
+  
+  color: var(--cafe-medio);
+  font-weight: bold;
+  margin-right: 0.3rem;
+}
+
+.info-left li {
+  background-color: var(--crema);
+  padding: 0.4rem 0.6rem;
+  margin-bottom: 0.4rem;
+  border-radius: 4px;
+  box-shadow: 0 1px 3px var(--sombra-suave);
 }
 
 .info-right {
@@ -134,42 +217,33 @@ section h2 {
 }
 
 .product-image {
+  width: 180px;
   max-width: 100%;
   height: auto;
   border-radius: 8px;
   object-fit: cover;
   box-shadow: 0 2px 6px var(--sombra-suave);
+  margin: 0;
+  display: block;
+  
 }
 
-/* 📱 Responsive para móviles */
+/* 📱 Responsive */
 @media (max-width: 600px) {
-  .menu-toggle {
-    display: block;
-  }
-
-  .nav-links {
-    display: none;
+  .modal-content {
     flex-direction: column;
-    align-items: center;
-  }
-
-  .nav-links.active {
-    display: flex;
-  }
-
-  .details-content {
-    flex-direction: column;
-    align-items: center;
     text-align: center;
   }
 
+  .info-left,
   .info-right {
+    width: 100%;
     text-align: center;
   }
 
-  .menu-item summary {
-    flex-direction: column;
-    align-items: flex-start;
+  .product-image {
+    max-width: 90%;
+    margin-top: 1rem;
   }
 }
 
@@ -191,81 +265,4 @@ footer a {
 
 footer a:hover {
   text-decoration: underline;
-}
-
-/* 🛠️ Estilos adicionales */
-/* Animación de apertura */
-details.menu-item[open] .details-content {
-  animation: fadeIn 0.4s ease-in-out;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(-10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Estilo interno del contenido */
-.details-content {
-  display: flex;
-  justify-content: space-between;
-  gap: 1rem;
-  padding: 1rem;
-  flex-wrap: wrap;
-  background-color: var(--blanco);
-  border: 1px solid var(--cafe-claro);
-  border-radius: 6px;
-  margin-top: 0.5rem;
-  box-shadow: 0 2px 6px var(--sombra-suave);
-}
-
-.info-left {
-  flex: 1;
-  min-width: 250px;
-}
-
-.info-left h3 {
-  margin-top: 0;
-  color: var(--cafe-medio);
-}
-
-.info-left ul {
-  padding-left: 1rem;
-  margin: 0.5rem 0 0;
-}
-
-.info-left li {
-  margin-bottom: 0.3rem;
-}
-
-.info-right {
-  flex: 1;
-  min-width: 250px;
-  text-align: right;
-}
-
-.product-image {
-  max-width: 100%;
-  height: auto;
-  border-radius: 8px;
-  object-fit: cover;
-  box-shadow: 0 2px 6px var(--sombra-suave);
-}
-
-/* Responsive */
-@media (max-width: 600px) {
-  .details-content {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  .info-right {
-    text-align: center;
-  }
 }

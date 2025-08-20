@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Cafetería PATAGONIA</title>
+  <title>CAFÉ PATAGONIA</title>
   <link rel="stylesheet" href="/patagonia/assets/styles/style.css" />
 </head>
 <body>
   <header>
-    <h1>Cafetería PATAGONIA</h1>
+    <h1>CAFÉ PATAGONIA</h1>
     <nav>
       <button class="menu-toggle" onclick="toggleMenu()">☰</button>
       <ul class="nav-links">
@@ -31,277 +31,344 @@
 
 <main>
   <!-- ☕ CAFÉ -->
-  <section id="cafe">
-  <h2>☕ Café</h2>
-
-  <details class="menu-item">
-    <summary>Espresso / Café solo – €0,90</summary>
-    <div class="details-content">
-      <div class="info-left">
-        <h3>Espresso</h3>
-        <p>Café intenso y aromático servido en taza pequeña. Ideal para los amantes del sabor puro.</p>
-        <ul>
-          <li>Intensidad: Alta</li>
-          <li>Origen: Brasil</li>
-          <li>Preparación rápida</li>
-        </ul>
-      </div>
-      <div class="info-right">
-        <img src="/patagonia/assets/image/logo/cafe patagonia.png" alt="Espresso" class="product-image" />
-      </div>
+<!-- Producto: Espresso -->
+<div class="menu-item">
+  <button class="open-modal" data-id="espresso">Espresso / Café solo – €0,90</button>
+</div>
+<div class="modal" id="modal-espresso">
+  <div class="modal-content">
+    <span class="close-modal">&times;</span>
+    <div class="info-left">
+      <h3>Espresso</h3>
+      <p>Café intenso y aromático servido en taza pequeña. Ideal para los amantes del sabor puro.</p>
+      <ul>
+        <li>☕Intensidad: Alta</li>
+        <li>☕Origen: Brasil</li>
+        <li>☕Preparación rápida</li>
+      </ul>
     </div>
-  </details>
-
-  <details class="menu-item">
-    <summary>Cortado / Bombón – €1,00</summary>
-    <div class="details-content">
-      <div class="info-left">
-        <h3>Cortado / Bombón</h3>
-        <p>Espresso con un toque de leche o leche condensada. Perfecto para suavizar el sabor sin perder intensidad.</p>
-        <ul>
-          <li>Formato: Cortado o Bombón</li>
-          <li>Ideal para media mañana</li>
-        </ul>
-      </div>
-      <div class="info-right">
-        <img src="/patagonia/assets/image/logo/cafe patagonia.png" alt="Cortado / Bombón" class="product-image" />
-      </div>
+    <div class="info-right">
+      <img src="/patagonia/assets/image/logo/cafe patagonia.png" alt="Espresso" class="product-image" />
     </div>
-  </details>
+    
+  </div>
+</div>
 
-  <details class="menu-item">
-    <summary>Americano – €1,10</summary>
-    <div class="details-content">
-      <div class="info-left">
-        <h3>Americano</h3>
-        <p>Espresso diluido con agua caliente. Suave y ligero, ideal para quienes prefieren un café menos intenso.</p>
-        <ul>
-          <li>Intensidad: Baja</li>
-          <li>Formato largo</li>
-        </ul>
-      </div>
-      <div class="info-right">
-        <img src="/patagonia/assets/image/logo/cafe patagonia.png" alt="Americano" class="product-image" />
-      </div>
+<!-- Producto: Cortado / Bombón -->
+<div class="menu-item">
+  <button class="open-modal" data-id="cortado">Cortado / Bombón – €1,00</button>
+</div>
+<div class="modal" id="modal-cortado">
+  <div class="modal-content">
+    <span class="close-modal">&times;</span>
+    <div class="info-left">
+      <h3>Cortado / Bombón</h3>
+      <p>Espresso con un toque de leche o leche condensada. Perfecto para suavizar el sabor sin perder intensidad.</p>
+      <ul>
+        <li>Formato: Cortado o Bombón</li>
+        <li>Ideal para media mañana</li>
+      </ul>
     </div>
-  </details>
+    <div class="info-right">
+      <img src="/patagonia/assets/image/logo/cafe patagonia.png" alt="Cortado / Bombón" class="product-image" />
+    </div>
+  </div>
+</div>
 
-  <details class="menu-item">
-    <summary>Café con leche – €1,20 🥛</summary>
-    <div class="details-content">
-      <div class="info-left">
-        <h3>Café con leche</h3>
-        <p>Mitad café, mitad leche caliente. Una opción clásica y reconfortante para cualquier momento del día.</p>
-        <ul>
-          <li>Formato equilibrado</li>
-          <li>Disponible con leche vegetal</li>
-        </ul>
-      </div>
-      <div class="info-right">
-        <img src="/patagonia/assets/image/logo/cafe patagonia.png" alt="Café con leche" class="product-image" />
-      </div>
+<!-- Producto: Americano -->
+<div class="menu-item">
+  <button class="open-modal" data-id="americano">Americano – €1,10</button>
+</div>
+<div class="modal" id="modal-americano">
+  <div class="modal-content">
+    <span class="close-modal">&times;</span>
+    <div class="info-left">
+      <h3>Americano</h3>
+      <p>Espresso diluido con agua caliente. Suave y ligero, ideal para quienes prefieren un café menos intenso.</p>
+      <ul>
+        <li>Intensidad: Baja</li>
+        <li>Formato largo</li>
+      </ul>
     </div>
-  </details>
+    <div class="info-right">
+      <img src="/patagonia/assets/image/logo/cafe patagonia.png" alt="Americano" class="product-image" />
+    </div>
+  </div>
+</div>
 
-  <details class="menu-item">
-    <summary>Cortado largo – €1,20 🥛</summary>
-    <div class="details-content">
-      <div class="info-left">
-        <h3>Cortado largo</h3>
-        <p>Versión más suave del cortado tradicional, con un poco más de leche. Ideal para quienes buscan equilibrio.</p>
-        <ul>
-          <li>Formato largo</li>
-          <li>Textura cremosa</li>
-        </ul>
-      </div>
-      <div class="info-right">
-        <img src="/patagonia/assets/image/logo/cafe patagonia.png" alt="Cortado largo" class="product-image" />
-      </div>
+<!-- Producto: Café con leche -->
+<div class="menu-item">
+  <button class="open-modal" data-id="con-leche">Café con leche – €1,20 🥛</button>
+</div>
+<div class="modal" id="modal-con-leche">
+  <div class="modal-content">
+    <span class="close-modal">&times;</span>
+    <div class="info-left">
+      <h3>Café con leche</h3>
+      <p>Mitad café, mitad leche caliente. Una opción clásica y reconfortante para cualquier momento del día.</p>
+      <ul>
+        <li>Formato equilibrado</li>
+        <li>Disponible con leche vegetal</li>
+      </ul>
     </div>
-  </details>
+    <div class="info-right">
+      <img src="/patagonia/assets/image/logo/cafe patagonia.png" alt="Café con leche" class="product-image" />
+    </div>
+  </div>
+</div>
 
-  <details class="menu-item">
-    <summary>Capuccino – €1,30 🥛</summary>
-    <div class="details-content">
-      <div class="info-left">
-        <h3>Capuccino</h3>
-        <p>Espresso con leche vaporizada y espuma cremosa. Un clásico italiano que nunca falla.</p>
-        <ul>
-          <li>Intensidad: Media</li>
-          <li>Decorado con cacao</li>
-        </ul>
-      </div>
-      <div class="info-right">
-        <img src="/patagonia/assets/image/logo/cafe patagonia.png" alt="Capuccino" class="product-image" />
-      </div>
+<!-- Producto: Cortado largo -->
+<div class="menu-item">
+  <button class="open-modal" data-id="cortado-largo">Cortado largo – €1,20 🥛</button>
+</div>
+<div class="modal" id="modal-cortado-largo">
+  <div class="modal-content">
+    <span class="close-modal">&times;</span>
+    <div class="info-left">
+      <h3>Cortado largo</h3>
+      <p>Versión más suave del cortado tradicional, con un poco más de leche. Ideal para quienes buscan equilibrio.</p>
+      <ul>
+        <li>Formato largo</li>
+        <li>Textura cremosa</li>
+      </ul>
     </div>
-  </details>
+    <div class="info-right">
+      <img src="/patagonia/assets/image/logo/cafe patagonia.png" alt="Cortado largo" class="product-image" />
+    </div>
+  </div>
+</div>
 
-  <details class="menu-item">
-    <summary>Flat White – €1,30 🥛</summary>
-    <div class="details-content">
-      <div class="info-left">
-        <h3>Flat White</h3>
-        <p>Similar al capuccino pero con menos espuma y más café. Perfecto para los que buscan intensidad con suavidad.</p>
-        <ul>
-          <li>Origen: Australia</li>
-          <li>Leche microespumada</li>
-        </ul>
-      </div>
-      <div class="info-right">
-        <img src="/patagonia/assets/image/logo/cafe patagonia.png" alt="Flat White" class="product-image" />
-      </div>
+<!-- Producto: Capuccino -->
+<div class="menu-item">
+  <button class="open-modal" data-id="capuccino">Capuccino – €1,30 🥛</button>
+</div>
+<div class="modal" id="modal-capuccino">
+  <div class="modal-content">
+    <span class="close-modal">&times;</span>
+    <div class="info-left">
+      <h3>Capuccino</h3>
+      <p>Espresso con leche vaporizada y espuma cremosa. Un clásico italiano que nunca falla.</p>
+      <ul>
+        <li>Intensidad: Media</li>
+        <li>Decorado con cacao</li>
+      </ul>
     </div>
-  </details>
+    <div class="info-right">
+      <img src="/patagonia/assets/image/logo/cafe patagonia.png" alt="Capuccino" class="product-image" />
+    </div>
+  </div>
+</div>
 
-  <details class="menu-item">
-    <summary>Café con leche largo – €1,40 🥛</summary>
-    <div class="details-content">
-      <div class="info-left">
-        <h3>Café con leche largo</h3>
-        <p>Una versión más generosa del café con leche. Ideal para acompañar desayunos o meriendas.</p>
-        <ul>
-          <li>Formato grande</li>
-          <li>Disponible con leche vegetal</li>
-        </ul>
-      </div>
-      <div class="info-right">
-        <img src="/patagonia/assets/image/logo/cafe patagonia.png" alt="Café con leche largo" class="product-image" />
-      </div>
+<!-- Producto: Flat White -->
+<div class="menu-item">
+  <button class="open-modal" data-id="flat-white">Flat White – €1,30 🥛</button>
+</div>
+<div class="modal" id="modal-flat-white">
+  <div class="modal-content">
+    <span class="close-modal">&times;</span>
+    <div class="info-left">
+      <h3>Flat White</h3>
+      <p>Similar al capuccino pero con menos espuma y más café. Perfecto para los que buscan intensidad con suavidad.</p>
+      <ul>
+        <li>Origen: Australia</li>
+        <li>Leche microespumada</li>
+      </ul>
     </div>
-  </details>
+    <div class="info-right">
+      <img src="/patagonia/assets/image/logo/cafe patagonia.png" alt="Flat White" class="product-image" />
+    </div>
+  </div>
+</div>
 
-  <details class="menu-item">
-    <summary>Barraquito con licor – €1,80 🥛</summary>
-    <div class="details-content">
-      <div class="info-left">
-        <h3>Barraquito con licor</h3>
-        <p>Especialidad canaria con café, leche condensada, licor, espuma y canela. Un viaje de sabor en capas.</p>
-        <ul>
-          <li>Licor: Típicamente Licor 43</li>
-          <li>Decorado con canela y limón</li>
-        </ul>
-      </div>
-      <div class="info-right">
-        <img src="/patagonia/assets/image/logo/cafe patagonia.png" alt="Barraquito con licor" class="product-image" />
-      </div>
+<!-- Producto: Café con leche largo -->
+<div class="menu-item">
+  <button class="open-modal" data-id="con-leche-largo">Café con leche largo – €1,40 🥛</button>
+</div>
+<div class="modal" id="modal-con-leche-largo">
+  <div class="modal-content">
+    <span class="close-modal">&times;</span>
+    <div class="info-left">
+      <h3>Café con leche largo</h3>
+      <p>Una versión más generosa del café con leche. Ideal para acompañar desayunos o meriendas.</p>
+      <ul>
+        <li>Formato grande</li>
+        <li>Disponible con leche vegetal</li>
+      </ul>
     </div>
-  </details>
+    <div class="info-right">
+      <img src="/patagonia/assets/image/logo/cafe patagonia.png" alt="Café con leche largo" class="product-image" />
+    </div>
+  </div>
+</div>
+<!-- Producto: Barraquito con licor -->
+<div class="menu-item">
+  <button class="open-modal" data-id="barraquito">Barraquito con licor – €1,80 🥛</button>
+</div>
+<div class="modal" id="modal-barraquito">
+  <div class="modal-content">
+    <span class="close-modal">&times;</span>
+    <div class="info-left">
+      <h3>Barraquito con licor</h3>
+      <p>Especialidad canaria con café, leche condensada, licor, espuma y canela. Un viaje de sabor en capas.</p>
+      <ul>
+        <li>Licor: Típicamente Licor 43</li>
+        <li>Decorado con canela y limón</li>
+      </ul>
+    </div>
+    <div class="info-right">
+      <img src="/patagonia/assets/image/logo/cafe patagonia.png" alt="Barraquito con licor" class="product-image" />
+    </div>
+  </div>
+</div>
 
-  <details class="menu-item">
-    <summary>Shakerato – €1,50</summary>
-    <div class="details-content">
-      <div class="info-left">
-        <h3>Shakerato</h3>
-        <p>Espresso agitado con hielo y azúcar. Refrescante y elegante, ideal para días calurosos.</p>
-        <ul>
-          <li>Servido frío</li>
-          <li>Origen: Italia</li>
-        </ul>
-      </div>
-      <div class="info-right">
-        <img src="/patagonia/assets/image/logo/cafe patagonia.png" alt="Shakerato" class="product-image" />
-      </div>
+<!-- Producto: Shakerato -->
+<div class="menu-item">
+  <button class="open-modal" data-id="shakerato">Shakerato – €1,50</button>
+</div>
+<div class="modal" id="modal-shakerato">
+  <div class="modal-content">
+    <span class="close-modal">&times;</span>
+    <div class="info-left">
+      <h3>Shakerato</h3>
+      <p>Espresso agitado con hielo y azúcar. Refrescante y elegante, ideal para días calurosos.</p>
+      <ul>
+        <li>Servido frío</li>
+        <li>Origen: Italia</li>
+      </ul>
     </div>
-  </details>
+    <div class="info-right">
+      <img src="/patagonia/assets/image/logo/cafe patagonia.png" alt="Shakerato" class="product-image" />
+    </div>
+  </div>
+</div>
 
-  <details class="menu-item">
-    <summary>Affogato al café – €2,00 🥛</summary>
-    <div class="details-content">
-      <div class="info-left">
-        <h3>Affogato</h3>
-        <p>Helado de vainilla bañado en espresso caliente. Un postre irresistible para los amantes del café.</p>
-        <ul>
-          <li>Formato postre</li>
-          <li>Contraste frío-caliente</li>
-        </ul>
-      </div>
-      <div class="info-right">
-        <img src="/patagonia/assets/image/logo/cafe patagonia.png" alt="Affogato al café" class="product-image" />
-      </div>
+<!-- Producto: Affogato al café -->
+<div class="menu-item">
+  <button class="open-modal" data-id="affogato">Affogato al café – €2,00 🥛</button>
+</div>
+<div class="modal" id="modal-affogato">
+  <div class="modal-content">
+    <span class="close-modal">&times;</span>
+    <div class="info-left">
+      <h3>Affogato</h3>
+      <p>Helado de vainilla bañado en espresso caliente. Un postre irresistible para los amantes del café.</p>
+      <ul>
+        <li>Formato postre</li>
+        <li>Contraste frío-caliente</li>
+      </ul>
     </div>
-  </details>
+    <div class="info-right">
+      <img src="/patagonia/assets/image/logo/cafe patagonia.png" alt="Affogato al café" class="product-image" />
+    </div>
+  </div>
+</div>
 
-  <details class="menu-item">
-    <summary>Frappé de café – €2,50 🥛</summary>
-    <div class="details-content">
-      <div class="info-left">
-        <h3>Frappé de café</h3>
-        <p>Café batido con hielo, leche y azúcar. Refrescante y cremoso, perfecto para el verano.</p>
-        <ul>
-          <li>Servido frío</li>
-          <li>Opciones con sirope</li>
-        </ul>
-      </div
-        <details class="menu-item">
-    <summary>Patagonia Nocciola – €2,50 🥛</summary>
-    <div class="details-content">
-      <div class="info-left">
-        <h3>Patagonia Nocciola</h3>
-        <p>Especialidad de la casa con café, crema de avellanas y leche espumada. Dulce, aromático y único.</p>
-        <ul>
-          <li>Toque de avellana</li>
-          <li>Receta exclusiva</li>
-        </ul>
-      </div>
-      <div class="info-right">
-        <img src="/patagonia/assets/image/logo/cafe patagonia.png" alt="Patagonia Nocciola" class="product-image" />
-      </div>
+<!-- Producto: Frappé de café -->
+<div class="menu-item">
+  <button class="open-modal" data-id="frappe">Frappé de café – €2,50 🥛</button>
+</div>
+<div class="modal" id="modal-frappe">
+  <div class="modal-content">
+    <span class="close-modal">&times;</span>
+    <div class="info-left">
+      <h3>Frappé de café</h3>
+      <p>Café batido con hielo, leche y azúcar. Refrescante y cremoso, perfecto para el verano.</p>
+      <ul>
+        <li>Servido frío</li>
+        <li>Opciones con sirope</li>
+      </ul>
     </div>
-  </details>
+    <div class="info-right">
+      <img src="/patagonia/assets/image/logo/cafe patagonia.png" alt="Frappé de café" class="product-image" />
+    </div>
+  </div>
+</div>
 
-  <details class="menu-item">
-    <summary>Irish Coffee – €3,50 🥛</summary>
-    <div class="details-content">
-      <div class="info-left">
-        <h3>Irish Coffee</h3>
-        <p>Café caliente con whisky irlandés, azúcar moreno y crema espesa. Un clásico reconfortante.</p>
-        <ul>
-          <li>Licor incluido</li>
-          <li>Servido caliente</li>
-        </ul>
-      </div>
-      <div class="info-right">
-        <img src="/patagonia/assets/image/logo/cafe patagonia.png" alt="Irish Coffee" class="product-image" />
-      </div>
+<!-- Producto: Patagonia Nocciola -->
+<div class="menu-item">
+  <button class="open-modal" data-id="nocciola">Patagonia Nocciola – €2,50 🥛</button>
+</div>
+<div class="modal" id="modal-nocciola">
+  <div class="modal-content">
+    <span class="close-modal">&times;</span>
+    <div class="info-left">
+      <h3>Patagonia Nocciola</h3>
+      <p>Especialidad de la casa con café, crema de avellanas y leche espumada. Dulce, aromático y único.</p>
+      <ul>
+        <li>Toque de avellana</li>
+        <li>Receta exclusiva</li>
+      </ul>
     </div>
-  </details>
+    <div class="info-right">
+      <img src="/patagonia/assets/image/logo/cafe patagonia.png" alt="Patagonia Nocciola" class="product-image" />
+    </div>
+  </div>
+</div>
 
-  <details class="menu-item">
-    <summary>Cola Cao – €1,50 🥛</summary>
-    <div class="details-content">
-      <div class="info-left">
-        <h3>Cola Cao</h3>
-        <p>Bebida de cacao caliente, ideal para niños y amantes del chocolate. Se puede preparar con leche vegetal.</p>
-        <ul>
-          <li>Sin cafeína</li>
-          <li>Opción vegana disponible</li>
-        </ul>
-      </div>
-      <div class="info-right">
-        <img src="/patagonia/assets/image/logo/cafe patagonia.png" alt="Cola Cao" class="product-image" />
-      </div>
+<!-- Producto: Irish Coffee -->
+<div class="menu-item">
+  <button class="open-modal" data-id="irish">Irish Coffee – €3,50 🥛</button>
+</div>
+<div class="modal" id="modal-irish">
+  <div class="modal-content">
+    <span class="close-modal">&times;</span>
+    <div class="info-left">
+      <h3>Irish Coffee</h3>
+      <p>Café caliente con whisky irlandés, azúcar moreno y crema espesa. Un clásico reconfortante.</p>
+      <ul>
+        <li>Licor incluido</li>
+        <li>Servido caliente</li>
+      </ul>
     </div>
-  </details>
+    <div class="info-right">
+      <img src="/patagonia/assets/image/logo/cafe patagonia.png" alt="Irish Coffee" class="product-image" />
+    </div>
+  </div>
+</div>
 
-  <details class="menu-item">
-    <summary>Infusiones Tea of Life – €1,50</summary>
-    <div class="details-content">
-      <div class="info-left">
-        <h3>Infusiones Tea of Life</h3>
-        <p>Selección de tés e infusiones naturales: manzanilla, menta, rooibos, frutos rojos y más.</p>
-        <ul>
-          <li>Sin cafeína (según variedad)</li>
-          <li>Origen: Sri Lanka</li>
-        </ul>
-      </div>
-      <div class="info-right">
-        <img src="/patagonia/assets/image/logo/cafe patagonia.png" alt="Infusiones Tea of Life" class="product-image" />
-      </div>
+<!-- Producto: Cola Cao -->
+<div class="menu-item">
+  <button class="open-modal" data-id="cola-cao">Cola Cao – €1,50 🥛</button>
+</div>
+<div class="modal" id="modal-cola-cao">
+  <div class="modal-content">
+    <span class="close-modal">&times;</span>
+    <div class="info-left">
+      <h3>Cola Cao</h3>
+      <p>Bebida de cacao caliente, ideal para niños y amantes del chocolate. Se puede preparar con leche vegetal.</p>
+      <ul>
+        <li>Sin cafeína</li>
+        <li>Opción vegana disponible</li>
+      </ul>
     </div>
-  </details>
-</section>
-</section>
+    <div class="info-right">
+      <img src="/patagonia/assets/image/logo/cafe patagonia.png" alt="Cola Cao" class="product-image" />
+    </div>
+  </div>
+</div>
+
+<!-- Producto: Infusiones Tea of Life -->
+<div class="menu-item">
+  <button class="open-modal" data-id="infusiones">Infusiones Tea of Life – €1,50</button>
+</div>
+<div class="modal" id="modal-infusiones">
+  <div class="modal-content">
+    <span class="close-modal">&times;</span>
+    <div class="info-left">
+      <h3>Infusiones Tea of Life</h3>
+      <p>Selección de tés e infusiones naturales: manzanilla, menta, rooibos, frutos rojos y más.</p>
+      <ul>
+        <li>Sin cafeína (según variedad)</li>
+        <li>Origen: Sri Lanka</li>
+      </ul>
+    </div>
+    <div class="info-right">
+      <img src="/patagonia/assets/image/logo/cafe patagonia.png" alt="Infusiones Tea of Life" class="product-image" />
+    </div>
+  </div>
+</div>
+
+
 
   <!-- 🥤 BEBIDAS -->
   <section id="bebidas">
@@ -326,6 +393,159 @@
     <details class="menu-item"><summary>Chupito – €1,00</summary></details>
     <details class="menu-item"><summary>Combinado – €4,30</summary></details>
     <details class="menu-item"><summary>Licores – €2,50</summary></details>
+  <div class="menu-item">
+    <div class="summary" data-id="con-leche-largo">Café con leche largo – €1,40 🥛</div>
+    <div class="details-content" id="con-leche-largo">
+      <div class="info-left">
+        <h3>Café con leche largo</h3>
+        <p>Una versión más generosa del café con leche. Ideal para acompañar desayunos o meriendas.</p>
+        <ul>
+          <li>Formato grande</li>
+          <li>Disponible con leche vegetal</li>
+        </ul>
+      </div>
+      <div class="info-right">
+        <img src="/patagonia/assets/image/logo/cafe patagonia.png" alt="Café con leche largo" class="product-image" />
+      </div>
+    </div>
+  </div>
+
+  <div class="menu-item">
+    <div class="summary" data-id="barraquito">Barraquito con licor – €1,80 🥛</div>
+    <div class="details-content" id="barraquito">
+      <div class="info-left">
+        <h3>Barraquito con licor</h3>
+        <p>Especialidad canaria con café, leche condensada, licor, espuma y canela. Un viaje de sabor en capas.</p>
+        <ul>
+          <li>Licor: Típicamente Licor 43</li>
+          <li>Decorado con canela y limón</li>
+        </ul>
+      </div>
+      <div class="info-right">
+        <img src="/patagonia/assets/image/logo/cafe patagonia.png" alt="Barraquito con licor" class="product-image" />
+      </div>
+    </div>
+  </div>
+
+  <div class="menu-item">
+    <div class="summary" data-id="shakerato">Shakerato – €1,50</div>
+    <div class="details-content" id="shakerato">
+      <div class="info-left">
+        <h3>Shakerato</h3>
+        <p>Espresso agitado con hielo y azúcar. Refrescante y elegante, ideal para días calurosos.</p>
+        <ul>
+          <li>Servido frío</li>
+          <li>Origen: Italia</li>
+        </ul>
+      </div>
+      <div class="info-right">
+        <img src="/patagonia/assets/image/logo/cafe patagonia.png" alt="Shakerato" class="product-image" />
+      </div>
+    </div>
+  </div>
+
+  <div class="menu-item">
+    <div class="summary" data-id="affogato">Affogato al café – €2,00 🥛</div>
+    <div class="details-content" id="affogato">
+      <div class="info-left">
+        <h3>Affogato</h3>
+        <p>Helado de vainilla bañado en espresso caliente. Un postre irresistible para los amantes del café.</p>
+        <ul>
+          <li>Formato postre</li>
+          <li>Contraste frío-caliente</li>
+        </ul>
+      </div>
+      <div class="info-right">
+        <img src="/patagonia/assets/image/logo/cafe patagonia.png" alt="Affogato al café" class="product-image" />
+      </div>
+    </div>
+  </div>
+
+  <div class="menu-item">
+    <div class="summary" data-id="frappe">Frappé de café – €2,50 🥛</div>
+    <div class="details-content" id="frappe">
+      <div class="info-left">
+        <h3>Frappé de café</h3>
+        <p>Café batido con hielo, leche y azúcar. Refrescante y cremoso, perfecto para el verano.</p>
+        <ul>
+          <li>Servido frío</li>
+          <li>Opciones con sirope</li>
+        </ul>
+      </div>
+      <div class="info-right">
+        <img src="/patagonia/assets/image/logo/cafe patagonia.png" alt="Frappé de café" class="product-image" />
+      </div>
+    </div>
+  </div>
+
+  <div class="menu-item">
+    <div class="summary" data-id="nocciola">Patagonia Nocciola – €2,50 🥛</div>
+    <div class="details-content" id="nocciola">
+      <div class="info-left">
+        <h3>Patagonia Nocciola</h3>
+        <p>Especialidad de la casa con café, crema de avellanas y leche espumada. Dulce, aromático y único.</p>
+        <ul>
+          <li>Toque de avellana</li>
+          <li>Receta exclusiva</li>
+        </ul>
+      </div>
+      <div class="info-right">
+        <img src="/patagonia/assets/image/logo/cafe patagonia.png" alt="Patagonia Nocciola" class="product-image" />
+      </div>
+    </div>
+  </div>
+
+  <div class="menu-item">
+    <div class="summary" data-id="irish">Irish Coffee – €3,50 🥛</div>
+    <div class="details-content" id="irish">
+      <div class="info-left">
+        <h3>Irish Coffee</h3>
+        <p>Café caliente con whisky irlandés, azúcar moreno y crema espesa. Un clásico reconfortante.</p>
+        <ul>
+          <li>Licor incluido</li>
+          <li>Servido caliente</li>
+        </ul>
+      </div>
+      <div class="info-right">
+        <img src="/patagonia/assets/image/logo/cafe patagonia.png" alt="Irish Coffee" class="product-image" />
+      </div>
+    </div>
+  </div>
+
+  <div class="menu-item">
+    <div class="summary" data-id="cola-cao">Cola Cao – €1,50 🥛</div>
+    <div class="details-content" id="cola-cao">
+      <div class="info-left">
+        <h3>Cola Cao</h3>
+        <p>Bebida de cacao caliente, ideal para niños y amantes del chocolate. Se puede preparar con leche vegetal.</p>
+        <ul>
+          <li>Sin cafeína</li>
+          <li>Opción vegana disponible</li>
+        </ul>
+      </div>
+      <div class="info-right">
+        <img src="/patagonia/assets/image/logo/cafe patagonia.png" alt="Cola Cao" class="product-image" />
+      </div>
+    </div>
+  </div>
+
+  <div class="menu-item">
+    <div class="summary" data-id="infusiones">Infusiones Tea of Life – €1,50</div>
+    <div class="details-content" id="infusiones">
+      <div class="info-left">
+        <h3>Infusiones Tea of Life</h3>
+        <p>Selección de tés e infusiones naturales: manzanilla, menta, rooibos, frutos rojos y más.</p>
+        <ul>
+          <li>Sin cafeína (según variedad)</li>
+          <li>Origen: Sri Lanka</li>
+        </ul>
+      </div>
+      <div class="info-right">
+        <img src="/patagonia/assets/image/logo/cafe patagonia.png" alt="Infusiones Tea of Life" class="product-image" />
+      </div>
+    </div>
+  </div>
+
   </section>
 
   <!-- 🍹 SMOOTHIES -->
