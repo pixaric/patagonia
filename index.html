@@ -29,6 +29,23 @@
 </header>
 
 
+<!-- filtro para alergenos -->
+<div class="filtro-container">
+  <label>Ocultar productos con:</label>
+  <div class="checkboxes">
+    <label><input type="checkbox" value="lacteos"> 🥛 Lácteos</label>
+    <label><input type="checkbox" value="huevo"> 🥚 Huevo</label>
+    <label><input type="checkbox" value="gluten"> 🌾 Gluten</label>
+    <label><input type="checkbox" value="frutos"> 🥜 Frutos secos</label>
+    <label><input type="checkbox" value="harina"> 🥐 Harina</label>
+    <label><input type="checkbox" value="crustaceos"> 🦐 Crustáceos</label>
+    <label><input type="checkbox" value="moluscos"> 🐚 Moluscos</label>
+  </div>
+  <label><input type="checkbox" id="solo-vegano"> Mostrar solo 🌱 veganos</label>
+</div>
+
+
+
 
   <main>
     <!-- ☕ CAFÉ -->
@@ -36,20 +53,20 @@
       <h2>☕ Café</h2>
       <ol class="cafes-lista">
         <li class="menu-item">Espresso / Café solo – €0,90</li>
-        <li class="menu-item">Cortado / Bombón – €1,00</li>
+        <li class="menu-item alergeno-lacteos">Cortado / Bombón – €1,00</li>
         <li class="menu-item">Americano – €1,10</li>
-        <li class="menu-item">Café con leche – €1,20 🥛</li>
-        <li class="menu-item">Cortado largo – €1,20 🥛</li>
-        <li class="menu-item">Capuccino – €1,30 🥛</li>
-        <li class="menu-item">Flat White – €1,30 🥛</li>
-        <li class="menu-item">Café con leche largo – €1,40 🥛</li>
-        <li class="menu-item">Barraquito con licor – €1,80 🥛</li>
-        <li class="menu-item">Shakerato – €1,50</li>
-        <li class="menu-item">Affogato al café – €2,00 🥛</li>
-        <li class="menu-item">Frappé de café – €2,50 🥛</li>
-        <li class="menu-item">Patagonia Nocciola – €2,50 🥛</li>
-        <li class="menu-item">Irish Coffee – €3,50 🥛</li>
-        <li class="menu-item">Cola Cao – €1,50 🥛</li>
+        <li class="menu-item alergeno-lacteos">Café con leche – €1,20 🥛</li>
+        <li class="menu-item alergeno-lacteos">Cortado largo – €1,20 🥛</li>
+        <li class="menu-item alergeno-lacteos">Capuccino – €1,30 🥛</li>
+        <li class="menu-item alergeno-lacteos">Flat White – €1,30 🥛</li>
+        <li class="menu-item alergeno-lacteos">Café con leche largo – €1,40 🥛</li>
+        <li class="menu-item alergeno-lacteos">Barraquito con licor – €1,80 🥛</li>
+        <li class="menu-item alergeno-lacteos">Shakerato – €1,50</li>
+        <li class="menu-item alergeno-lacteos">Affogato al café – €2,00 🥛</li>
+        <li class="menu-item alergeno-lacteos">Frappé de café – €2,50 🥛</li>
+        <li class="menu-item alergeno-lacteos">Patagonia Nocciola – €2,50 🥛</li>
+        <li class="menu-item alergeno-lacteos">Irish Coffee – €3,50 🥛</li>
+        <li class="menu-item alergeno-lacteos">Cola Cao – €1,50 🥛</li>
         <li class="menu-item">Infusiones Tea of Life – €1,50</li>
       </ol>
     </section>
@@ -84,9 +101,9 @@
     <section id="smoothies">
       <h2>🍹 Smoothies</h2>
       <ol class="jugos-lista">
-        <li class="menu-item">Naranja / Papaya / Plátano / Fresa – €2,50</li>
-        <li class="menu-item">Frutas del bosque / Maracuyá / Mango / Melón / Guayaba / Guanábana – €2,60</li>
-        <li class="menu-item">Coco Verde – €2,80</li>
+        <li class="menu-item">Naranja / Papaya / Plátano / Fresa  – €2,50</li>
+        <li class="menu-item">Frutas del bosque  / Maracuyá / Mango / Melón / Guayaba / Guanábana  – €2,60</li>
+        <li class="menu-item">Coco Verde  – €2,80</li>
       </ol>
     </section>
 
@@ -94,85 +111,108 @@
     <section id="postres">
       <h2>🍰 Postres</h2>
       <ol class="postres-lista">
-        <li class="menu-item">Tartas (variedad) – €2,90–€3,50 🥛 🥚 🌾</li>
-        <li class="menu-item">Delicias de Otoño – €4,50 🥛 🥚 🌾</li>
-        <li class="menu-item">Banana Split – €5,00 🥛 🥚</li>
-      </ol>
+  <li class="menu-item alergeno-lacteos alergeno-huevo alergeno-gluten">Tartas (variedad) – €2,90–€3,50 🥛 🥚 🌾</li>
+  <li class="menu-item alergeno-lacteos alergeno-huevo alergeno-gluten">Delicias de Otoño – €4,50 🥛 🥚 🌾</li>
+  <li class="menu-item alergeno-lacteos alergeno-huevo">Banana Split – €5,00 🥛 🥚</li>
+</ol>
+
     </section>
 
     <!-- 🍳 DESAYUNOS -->
     <section id="desayunos">
       <h2>🍳 Desayunos (hasta las 13:00)</h2>
       <ol class="bocadillos-lista">
-        <li class="menu-item">Tradicional – €3,00 🥐 🥛</li>
-        <li class="menu-item">Queso crema – €3,20 🥛 🥜</li>
-        <li class="menu-item">Saludable – €3,50 🌾</li>
-        <li class="menu-item">Hummus – €3,60 🌱</li>
-        <li class="menu-item">Ibérico – €3,70 🌾</li>
-      </ol>
+  <li class="menu-item alergeno-harina alergeno-lacteos">Tradicional – €3,00 🥐 🥛</li>
+  <li class="menu-item alergeno-lacteos alergeno-frutos">Queso crema – €3,20 🥛 🥜</li>
+  <li class="menu-item alergeno-gluten">Saludable – €3,50 🌾</li>
+  <li class="menu-item vegano">Hummus – €3,60 🌱</li>
+  <li class="menu-item alergeno-gluten">Ibérico – €3,70 🌾</li>
+</ol>
+
     </section>
 
     <!-- 🥪 SANDWICHES -->
     <section id="sandwiches">
       <h2>🥪 Sandwiches</h2>
       <ol class="sandwiches-lista">
-        <li class="menu-item">Mixto – €1,60 🥛 🌾</li>
-        <li class="menu-item">Queso Blanco – €2,40 🥛 🌾</li>
-        <li class="menu-item">Pollo – €2,20 🌾</li>
-        <li class="menu-item">Vegetariano – €2,90 🥛 🌾</li>
-        <li class="menu-item">Vegano de Tofu – €3,00 🌱</li>
-        <li class="menu-item">Triple – €3,00 🥛 🥚 🌾</li>
-      </ol>
+  <li class="menu-item alergeno-lacteos alergeno-gluten">Mixto – €1,60 🥛 🌾</li>
+  <li class="menu-item alergeno-lacteos alergeno-gluten">Queso Blanco – €2,40 🥛 🌾</li>
+  <li class="menu-item alergeno-gluten">Pollo – €2,20 🌾</li>
+  <li class="menu-item alergeno-lacteos alergeno-gluten">Vegetariano – €2,90 🥛 🌾</li>
+  <li class="menu-item vegano">Vegano de Tofu – €3,00 🌱</li>
+  <li class="menu-item alergeno-lacteos alergeno-huevo alergeno-gluten">Triple – €3,00 🥛 🥚 🌾</li>
+</ol>
+
     </section>
 
     <!-- 🥗 ENSALADAS -->
     <section id="ensaladas">
       <h2>🥗 Ensaladas</h2>
       <ol class="wraps-lista">
-        <li class="menu-item">Pollo – €4,70</li>
-                <li class="menu-item">Galileo – €4,70 🥛 🥜</li>
-        <li class="menu-item">Darwin – €4,95 🌱 🥜</li>
-      </ol>
+  <li class="menu-item">Pollo – €4,70</li> <!-- No se especifican alérgenos, se puede dejar sin clases o revisar ingredientes -->
+  <li class="menu-item alergeno-lacteos alergeno-frutos">Galileo – €4,70 🥛 🥜</li>
+  <li class="menu-item vegano alergeno-frutos">Darwin – €4,95 🌱 🥜</li>
+</ol>
+
     </section>
 
     <!-- 🍔 HAMBURGUESAS -->
     <section id="hamburguesas">
       <h2>🍔 Hamburguesas (con papas Deluxe)</h2>
       <ol class="tostadas-lista">
-        <li class="menu-item">Clásica – €3,80 🌾 🥛</li>
-        <li class="menu-item">Especial – €4,90 🌾 🥛</li>
-        <li class="menu-item">Patagonia – €6,00 🌱 🌾</li>
-      </ol>
+  <li class="menu-item alergeno-gluten alergeno-lacteos">Clásica – €3,80 🌾 🥛</li>
+  <li class="menu-item alergeno-gluten alergeno-lacteos">Especial – €4,90 🌾 🥛</li>
+  <li class="menu-item vegano alergeno-gluten">Patagonia – €6,00 🌱 🌾</li>
+</ol>
+
     </section>
 
     <!-- 🥖 BOCADILLOS -->
     <section id="bocadillos">
       <h2>🥖 Bocadillos</h2>
       <ol class="bocadillos-lista">
-        <li class="menu-item">Pollo – €1,50 / €2,70 🌾 🥛</li>
-        <li class="menu-item">Jamón Serrano – €1,60 / €2,80 🌾</li>
-        <li class="menu-item">Pata Asada – €1,70 / €2,90 🌾 🥛</li>
-        <li class="menu-item">Vegetariano – €1,90 / €3,20 🥛 🌾</li>
-        <li class="menu-item">Vegano de Tofu – €2,00 / €3,30 🌱 🌾</li>
-        <li class="menu-item">Vegano de Tempeh – €2,00 / €3,30 🌱 🌾</li>
-      </ol>
+  <li class="menu-item alergeno-gluten alergeno-lacteos">Pollo – €1,50 / €2,70 🌾 🥛</li>
+  <li class="menu-item alergeno-gluten">Jamón Serrano – €1,60 / €2,80 🌾</li>
+  <li class="menu-item alergeno-gluten alergeno-lacteos">Pata Asada – €1,70 / €2,90 🌾 🥛</li>
+  <li class="menu-item alergeno-gluten alergeno-lacteos">Vegetariano – €1,90 / €3,20 🥛 🌾</li>
+  <li class="menu-item vegano alergeno-gluten">Vegano de Tofu – €2,00 / €3,30 🌱 🌾</li>
+  <li class="menu-item vegano alergeno-gluten">Vegano de Tempeh – €2,00 / €3,30 🌱 🌾</li>
+</ol>
+
     </section>
 
     <!-- 🍢 PARA PICAR -->
     <section id="picar">
       <h2>🍢 Para Picar</h2>
       <ol class="snacks-lista">
-        <li class="menu-item">Nachos – €3,00 🌾</li>
-        <li class="menu-item">Deluxe – €3,00 🌾</li>
-        <li class="menu-item">Papas locas – €3,50 🥛</li>
-        <li class="menu-item">Papas cheddar – €3,50 🥛</li>
-        <li class="menu-item">Papas bacon – €3,50 🥛</li>
-        <li class="menu-item">Papas tempeh – €3,50 🌱</li>
-        <li class="menu-item">Papas tofu – €3,50 🌱</li>
-        <li class="menu-item">Hummus – €4,50 🌱</li>
-      </ol>
+  <li class="menu-item alergeno-gluten">Nachos – €3,00 🌾</li>
+  <li class="menu-item alergeno-gluten">Deluxe – €3,00 🌾</li>
+  <li class="menu-item alergeno-lacteos">Papas locas – €3,50 🥛</li>
+  <li class="menu-item alergeno-lacteos">Papas cheddar – €3,50 🥛</li>
+  <li class="menu-item alergeno-lacteos">Papas bacon – €3,50 🥛</li>
+  <li class="menu-item vegano">Papas tempeh – €3,50 🌱</li>
+  <li class="menu-item vegano">Papas tofu – €3,50 🌱</li>
+  <li class="menu-item vegano">Hummus – €4,50 🌱</li>
+</ol>
+
     </section>
   </main>
+
+  <!-- leyenda alergenos -->
+  <div class="leyenda-alergenos">
+  <h3>🔎 Leyenda de alérgenos</h3>
+  <ul>
+    <li><span>🥛</span> Lácteos</li>
+    <li><span>🥚</span> Huevo</li>
+    <li><span>🌾</span> Gluten</li>
+    <li><span>🥜</span> Frutos secos</li>
+    <li><span>🥐</span> Harina</li>
+    <li><span>🦐</span> Crustáceos</li>
+    <li><span>🐚</span> Moluscos</li>
+    <li><span>🌱</span> Vegano</li>
+  </ul>
+</div>
+
 
   <footer>
     <p>&copy; 2025 Café PATAGONIA · Santa Cruz de Tenerife</p>
