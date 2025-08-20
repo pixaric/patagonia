@@ -61,13 +61,43 @@ h2 {
   color: var(--cafe-medio);
 }
 
+/* Estilo vertical para menú */
 .menu-item {
-  background-color: var(--blanco);
+  margin-bottom: 1rem;
   border: 1px solid var(--cafe-claro);
-  border-radius: 8px;
-  padding: 1rem;
-  margin-top: 1rem;
-  box-shadow: 0 2px 5px rgba(75, 46, 46, 0.1);
+  border-radius: 6px;
+  background-color: var(--blanco);
+  padding: 0.5rem 1rem;
+}
+
+.menu-item summary {
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  color: var(--cafe-oscuro);
+}
+
+.details-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+.info-left {
+  flex: 1;
+  color: var(--cafe-medio);
+}
+
+.info-right {
+  flex: 1;
+  text-align: right;
+}
+
+.info-right img {
+  max-width: 150px;
+  border-radius: 6px;
 }
 
 .menu-item h3 {
@@ -159,4 +189,20 @@ footer {
 @keyframes fadeIn {
   from { opacity: 0; transform: scale(0.98); }
   to { opacity: 1; transform: scale(1); }
+}
+
+.rating {
+  margin-top: 0.5rem;
+  font-size: 1.5rem;
+  color: var(--cafe-claro);
+  cursor: pointer;
+}
+
+.rating .star {
+  padding: 0 2px;
+  transition: color 0.2s;
+}
+
+.rating .star.active {
+  color: gold;
 }
