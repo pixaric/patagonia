@@ -100,9 +100,7 @@ nav {
     padding-right: 1rem;
   }
 
-  .nav-links.show {
-    display: flex;
-  }
+ 
 
   nav {
     width: 100%;

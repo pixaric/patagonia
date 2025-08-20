@@ -1,17 +1,25 @@
 function toggleMenu() {
-  document.querySelector('.nav-links').classList.toggle('show');
+  document.getElementById('menuLateral').classList.toggle('show');
 }
 
+document.querySelectorAll('.nav-links a').forEach(link => {
+  link.addEventListener('click', () => {
+    document.getElementById('menuLateral').classList.remove('show');
+  });
+});
+
 document.addEventListener('click', function (event) {
-  const nav = document.querySelector('.nav-links');
+  const menu = document.getElementById('menuLateral');
   const toggle = document.querySelector('.menu-toggle');
 
-  if (nav.classList.contains('show') &&
-      !nav.contains(event.target) &&
+  if (menu.classList.contains('show') &&
+      !menu.contains(event.target) &&
       !toggle.contains(event.target)) {
-    nav.classList.remove('show');
+    menu.classList.remove('show');
   }
 });
+
+
 
 function aplicarFiltro() {
   const checkboxes = document.querySelectorAll('.checkboxes input[type="checkbox"]');

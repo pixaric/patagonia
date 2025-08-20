@@ -62,13 +62,13 @@ header h1 {
 }
 
 .menu-toggle {
-  font-size: 1.5rem;
+  position: relative; /* ← ya no es fixed */
+  font-size: 1.8rem;
   background-color: var(--cafe-claro);
   border: none;
-  border-radius: 4px;
+  border-radius: 6px;
   padding: 0.4rem 0.6rem;
   cursor: pointer;
-  color: var(--cafe-oscuro);
   box-shadow: 0 2px 4px var(--sombra-suave);
 }
 
@@ -79,37 +79,55 @@ nav {
   text-align: right;
 }
 
+.menu-lateral {
+  position: fixed;
+  top: 0;
+  right: -300px;
+  width: 200px;
+  height: 100%;
+  background-color: rgba(112, 96, 96, 0.85);
+  box-shadow: -4px 0 12px rgba(0, 0, 0, 0.2);
+  transition: right 0.3s ease;
+  z-index: 1000;
+  padding: 2rem 1rem;
+  overflow-y: auto;
+  
+}
+
+.menu-lateral.show {
+  right: 0;
+}
 
 .nav-links {
-  display: grid;
-  grid-auto-flow: column;
-  gap: 0.6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
   list-style: none;
   padding: 0;
   margin: 0;
-  justify-content: center;
-}
-
-
-.nav-links li {
-  flex: 0 1 auto;
 }
 
 .nav-links a {
-  display: block;
   text-decoration: none;
-  color: var(--cafe-oscuro);
   font-weight: bold;
-  padding: 0.5rem 0.8rem;
-  border-radius: 6px;
+  color: var(--cafe-oscuro);
   background-color: var(--crema);
-  transition: background-color 0.3s ease, transform 0.2s ease;
+  padding: 0.6rem 1rem;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
 }
 
 .nav-links a:hover {
   background-color: var(--cafe-claro);
-  transform: scale(1.05);
 }
+
+
+body.menu-abierto {
+  overflow: hidden;
+}
+
+
+
 
 
 
@@ -118,59 +136,29 @@ nav {
   .header-container {
     flex-direction: row;
     justify-content: space-between;
-  }
-
-  .nav-links {
-    overflow-x: auto;
-    white-space: nowrap;
-    display: flex;
-    flex-wrap: nowrap;
-  }
-
-  .nav-links li {
-    flex: 0 0 auto;
-  }
-
-  .menu-toggle {
-    display: block;
-    margin-left: auto;
-  }
-
-  .nav-links.show {
-    display: grid;
-  }
-
-  .nav-links {
-    display: none;
+    align-items: center;
   }
 
   .cabecera {
     padding: 0.5rem;
   }
 
-  .header-container {
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-}
-@media (max-width: 768px) {
   .menu-toggle {
     display: block;
     margin: 0 auto 1rem;
   }
 
-  .nav-links {
-    display: none;
-    flex-direction: column;
-    align-items: center;
-  }
+  
 
   .nav-links.show {
     display: flex;
   }
+
+  .nav-links li {
+    flex: 0 0 auto;
+  }
 }
+
 
 /* filtro alergenos */
 .filtro-container {
