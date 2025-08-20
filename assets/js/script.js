@@ -39,3 +39,17 @@ document.querySelectorAll('.checkboxes input, #solo-vegano').forEach(el => {
   el.addEventListener('change', aplicarFiltro);
 });
 
+
+const botonSubir = document.getElementById('boton-subir');
+
+window.addEventListener('scroll', () => {
+  botonSubir.classList.toggle('visible', window.scrollY > 300);
+});
+
+botonSubir.addEventListener('click', () => {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth' // puedes quitar esto si no quieres animación
+  });
+});
+

@@ -71,16 +71,22 @@ nav {
 
 
 .nav-links {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-end;
+  display: grid;
+  grid-auto-flow: column;
   gap: 0.6rem;
   list-style: none;
   padding: 0;
   margin: 0;
+  justify-content: center;
+}
+
+
+.nav-links li {
+  flex: 0 1 auto;
 }
 
 .nav-links a {
+  display: block;
   text-decoration: none;
   color: var(--cafe-oscuro);
   font-weight: bold;
@@ -95,6 +101,8 @@ nav {
   transform: scale(1.05);
 }
 
+
+
 /* 📱 Responsive menú para móviles */
 @media (max-width: 768px) {
   .header-container {
@@ -103,24 +111,27 @@ nav {
   }
 
   .nav-links {
-    display: none;
-    flex-direction: column;
-    align-items: flex-end;
-    padding-right: 1rem;
-  }
-
-  .nav-links.show {
+    overflow-x: auto;
+    white-space: nowrap;
     display: flex;
+    flex-wrap: nowrap;
   }
 
-  nav {
-    width: 100%;
-    text-align: right;
+  .nav-links li {
+    flex: 0 0 auto;
   }
 
   .menu-toggle {
     display: block;
     margin-left: auto;
+  }
+
+  .nav-links.show {
+    display: grid;
+  }
+
+  .nav-links {
+    display: none;
   }
 
   
@@ -289,3 +300,34 @@ footer a:hover {
   color: var(--cafe-oscuro);
   text-decoration: underline;
 }
+
+/*flotante*/
+#boton-subir {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+  background-color: var(--cafe-claro);
+  color: var(--cafe-oscuro);
+  border: none;
+  border-radius: 50%;
+  padding: 0.8rem 1rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+  box-shadow: 0 2px 6px var(--sombra-suave);
+  transition: opacity 0.3s ease, transform 0.2s ease;
+  opacity: 0;
+  pointer-events: none;
+}
+
+#boton-subir.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+#boton-subir:hover {
+  transform: scale(1.1);
+  background-color: var(--cafe-medio);
+}
+
+
