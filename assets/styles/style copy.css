@@ -19,15 +19,6 @@ body {
   scroll-behavior: smooth;
 }
 
-body {
-  overflow-y: scroll;
-  scrollbar-width: none; /* Firefox */
-}
-
-body::-webkit-scrollbar {
-  display: none; /* Chrome, Safari */
-}
-
 /* 🧭 Encabezado */
 header {
   background-color: var(--cafe-claro);
@@ -214,16 +205,4 @@ footer a:hover {
   ol {
     font-size: 1rem;
   }
-}
-
-footer a {
-  color: var(--cafe-medio);
-  text-decoration: none;
-  font-weight: bold;
-  transition: color 0.3s ease;
-}
-
-footer a:hover {
-  color: var(--cafe-oscuro);
-  text-decoration: underline;
 }

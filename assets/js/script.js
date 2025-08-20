@@ -1,26 +1,14 @@
+function toggleMenu() {
+  document.querySelector('.nav-links').classList.toggle('show');
+}
 
-  document.addEventListener("DOMContentLoaded", function () {
-    const openButtons = document.querySelectorAll('.open-modal');
-    const closeButtons = document.querySelectorAll('.close-modal');
+document.addEventListener('click', function (event) {
+  const nav = document.querySelector('.nav-links');
+  const toggle = document.querySelector('.menu-toggle');
 
-    openButtons.forEach(button => {
-      button.addEventListener('click', () => {
-        const id = button.getAttribute('data-id');
-        document.getElementById(`modal-${id}`).style.display = 'block';
-      });
-    });
-
-    closeButtons.forEach(button => {
-      button.addEventListener('click', () => {
-        button.closest('.modal').style.display = 'none';
-      });
-    });
-
-    window.addEventListener('click', (e) => {
-      document.querySelectorAll('.modal').forEach(modal => {
-        if (e.target === modal) {
-          modal.style.display = 'none';
-        }
-      });
-    });
-  });
+  if (nav.classList.contains('show') &&
+      !nav.contains(event.target) &&
+      !toggle.contains(event.target)) {
+    nav.classList.remove('show');
+  }
+});
