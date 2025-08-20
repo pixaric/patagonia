@@ -29,21 +29,34 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // Evaluación con estrellas
-  const ratings = document.querySelectorAll(".rating");
+  // Like/Dislike con localStorage
+  const voteBoxes = document.querySelectorAll(".vote-box");
 
-  ratings.forEach((rating) => {
-    const stars = rating.querySelectorAll(".star");
+  voteBoxes.forEach((box) => {
+    const id = box.getAttribute("data-id");
+    const likeBtn = box.querySelector(".like-btn");
+    const dislikeBtn = box.querySelector(".dislike-btn");
+    const likeCount = box.querySelector(".like-count");
+    const dislikeCount = box.querySelector(".dislike-count");
 
-    stars.forEach((star) => {
-      star.addEventListener("click", () => {
-        const value = parseInt(star.getAttribute("data-value"));
-        rating.setAttribute("data-score", value);
+    // Cargar votos guardados
+    const savedVotes = JSON.parse(localStorage.getItem("votes-" + id)) || { like: 0, dislike: 0, voted: null };
+    likeCount.textContent = savedVotes.like;
+    dislikeCount.textContent = savedVotes.dislike;
 
-        stars.forEach((s, i) => {
-          s.classList.toggle("active", i < value);
-        });
-      });
-    });
+    // Función para votar
+    function vote(type) {
+      if (savedVotes.voted) return; // ya votó
+
+      savedVotes[type]++;
+      savedVotes.voted = type;
+      localStorage.setItem("votes-" + id, JSON.stringify(savedVotes));
+
+      likeCount.textContent = savedVotes.like;
+      dislikeCount.textContent = savedVotes.dislike;
+    }
+
+    likeBtn.addEventListener("click", () => vote("like"));
+    dislikeBtn.addEventListener("click", () => vote("dislike"));
   });
 });
