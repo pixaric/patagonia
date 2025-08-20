@@ -221,8 +221,18 @@ footer {
   margin-top: 0.5rem;
   font-size: 1.4rem;
   color: #ccc;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  flex-wrap: wrap;
 }
 
 .star-rating .star.active {
   color: gold;
+}
+
+.star-rating .vote-count {
+  font-size: 0.9rem;
+  color: var(--cafe-medio);
+  margin-left: 0.5rem;
 }

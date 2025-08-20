@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // Like/Dislike para múltiples productos
+  // Like/Dislike con opción de cambiar voto
   const voteBoxes = document.querySelectorAll(".vote-box");
 
   voteBoxes.forEach((box) => {
@@ -33,25 +33,36 @@ document.addEventListener("DOMContentLoaded", () => {
     dislikeCount.textContent = saved.dislike;
 
     function vote(type) {
-      if (saved.voted) return; // ya votó
+      if (saved.voted === type) return; // ya votó lo mismo
+
+      // Si cambia de voto, resta el anterior
+      if (saved.voted === "like") saved.like--;
+      if (saved.voted === "dislike") saved.dislike--;
+
+      // Suma el nuevo voto
       saved[type]++;
       saved.voted = type;
+
       localStorage.setItem("votes-" + id, JSON.stringify(saved));
+
       likeCount.textContent = saved.like;
       dislikeCount.textContent = saved.dislike;
+
+      updateStarRatings();
     }
 
     likeBtn.addEventListener("click", () => vote("like"));
     dislikeBtn.addEventListener("click", () => vote("dislike"));
   });
-});
 
+  // Estrellas basadas en votos
 function updateStarRatings() {
   const starBlocks = document.querySelectorAll(".star-rating");
 
   starBlocks.forEach((block) => {
     const id = block.getAttribute("data-id");
     const stars = block.querySelectorAll(".star");
+    const voteCount = block.querySelector(".vote-count");
     const saved = JSON.parse(localStorage.getItem("votes-" + id)) || { like: 0, dislike: 0 };
 
     const totalVotes = saved.like + saved.dislike;
@@ -64,7 +75,10 @@ function updateStarRatings() {
     stars.forEach((star, index) => {
       star.classList.toggle("active", index < rating);
     });
+
+    voteCount.textContent = `(${totalVotes} voto${totalVotes !== 1 ? 's' : ''})`;
   });
 }
 
-updateStarRatings();
+  updateStarRatings();
+});
