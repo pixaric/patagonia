@@ -61,3 +61,32 @@ botonSubir.addEventListener('click', () => {
   });
 });
 
+const listaPedido = [];
+
+function agregarAlPedido(item) {
+  listaPedido.push(item);
+  actualizarResumen();
+}
+
+function actualizarResumen() {
+  const ul = document.getElementById("listaPedido");
+  ul.innerHTML = "";
+  listaPedido.forEach((producto, index) => {
+    const li = document.createElement("li");
+    li.textContent = producto;
+    ul.appendChild(li);
+  });
+}
+
+function imprimirPedido() {
+  const ventana = window.open('', '', 'height=600,width=400');
+  ventana.document.write('<html><head><title>Tu Pedido</title></head><body>');
+  ventana.document.write('<h2>🧾 Pedido Café Patagonia</h2><ul>');
+  listaPedido.forEach(producto => {
+    ventana.document.write(`<li>${producto}</li>`);
+  });
+  ventana.document.write('</ul></body></html>');
+  ventana.document.close();
+  ventana.print();
+}
+
