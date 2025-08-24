@@ -1,5 +1,8 @@
-/*pedido*/
-/* 🧾 CONTENEDOR PRINCIPAL DEL TICKET */
+/* ===========================
+   🧾 TICKET DE PEDIDO
+   =========================== */
+
+/* Contenedor principal */
 .resumen-pedido {
   background-color: #fffdf5;
   padding: 1.5em;
@@ -11,7 +14,7 @@
   text-align: left;
 }
 
-/* 🧾 ENCABEZADO DEL TICKET */
+/* Encabezado */
 .resumen-pedido h3 {
   font-size: 1.2em;
   margin-bottom: 1em;
@@ -20,7 +23,7 @@
   padding-bottom: 0.5em;
 }
 
-/* 📅 FECHA Y HORA */
+/* Fecha y hora */
 .fecha-hora {
   font-size: 0.9em;
   color: #555;
@@ -29,26 +32,49 @@
   font-family: 'Courier New', Courier, monospace;
 }
 
-/* 📋 LISTA DE PRODUCTOS */
+/* Lista de productos en el ticket */
 .resumen-pedido ul {
   list-style-type: none;
   padding-left: 0;
   margin-bottom: 1em;
 }
 
-.resumen-pedido ul li {
+.item-ticket {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   padding: 0.3em 0;
   border-bottom: 1px dotted #ddd;
+  font-size: 0.95em;
 }
 
-/* 💰 TOTAL DEL PEDIDO */
+.producto-nombre {
+  flex: 1;
+  text-align: left;
+}
+
+/* Ícono de eliminar producto */
+.eliminar-x {
+  color: #c49a6c;
+  font-size: 0.95em;
+  cursor: pointer;
+  padding: 0 0.3em;
+  transition: color 0.3s ease;
+  user-select: none;
+}
+
+.eliminar-x:hover {
+  color: #a87f4a;
+}
+
+/* Total del pedido */
 .resumen-pedido p {
   font-weight: bold;
   text-align: right;
   margin-top: 1em;
 }
 
-/* 🗑️ BOTÓN DE VACIAR */
+/* Botón de vaciar pedido */
 .resumen-pedido button {
   display: block;
   margin: 1em auto 0;
@@ -66,6 +92,7 @@
   background-color: #a87f4a;
 }
 
+/* Animación de entrada del ticket */
 @keyframes entradaTicket {
   0% {
     opacity: 0;
@@ -77,54 +104,39 @@
   }
 }
 
-.item-ticket {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0.4em 0;
-  border-bottom: 1px dotted #ddd;
-  font-size: 0.95em;
+/* ===========================
+   ☕ MENÚ DE PRODUCTOS
+   =========================== */
+
+/* Lista ordenada del menú */
+.menu-lista {
+  padding-left: 1.2rem;
+  font-size: 1.05rem;
+  color: var(--cafe-oscuro);
+  list-style-type: decimal;
 }
 
-.producto-nombre {
-  flex: 1;
-  text-align: left;
-}
-
-/* Estilo de la X como botón invisible */
-.eliminar-x {
-  color: #c49a6c;
-  font-size: 0.95em;
-  cursor: pointer;
-  padding: 0 0.3em;
-  transition: color 0.3s ease;
-  
-}
-
-.eliminar-x:hover {
-  color: #a87f4a;
-}
+/* Ítems del menú */
 .menu-item {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.1em 0; /* 🔽 Menos espacio vertical */
+  padding: 0.2em 0;
   border-bottom: 1px solid #eee;
-  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.95em;
 }
-
 
 .menu-item .producto-nombre {
   flex: 1;
   text-align: left;
 }
 
-/* Botón de añadir */
+/* Botón de añadir producto */
 .menu-item button {
   background-color: #c49a6c;
   color: white;
   border: none;
-  padding: 0.1em 0.8em;
+  padding: 0.2em 0.6em;
   border-radius: 4px;
   cursor: pointer;
   font-size: 0.75em;
@@ -135,8 +147,8 @@
   background-color: #a87f4a;
 }
 
-
-
-
-
-
+.menu-item button:disabled {
+  background-color: #a87f4a;
+  opacity: 0.8;
+  cursor: default;
+}

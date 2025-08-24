@@ -34,15 +34,19 @@
 
 </header>
 
-<!-- ticket -->
+<!-- pop up -->
 
-<section id="resumenPedido" class="resumen-pedido">
-  <h3>🧾 Tu Pedido</h3>
-  <p id="fechaHora" class="fecha-hora"></p>
-  <ul id="listaPedido"></ul>
-  <p><strong>Total:</strong> <span id="totalPedido">€0.00</span></p>
-  <button onclick="vaciarPedido()">🗑️ Vaciar</button>
-</section>
+<div id="popupOferta" class="popup-oferta">
+  <div class="popup-contenido">
+    <span class="cerrar-popup" onclick="cerrarPopup()">✖</span>
+    <h3>🌟 Oferta del Día 🌟</h3>
+    <img src="/assets/image/oferta_dia.png" alt="Oferta del día radiante">
+    <p>¡Luce radiante hoy con nuestra promoción especial!</p>
+    <ol class="ofer">
+    <li class="menu-item"><button onclick="agregarAlPedido('Oferta', 0.90)">Añadir</button></li>
+    </ol>
+  </div>
+</div>
 
 
 <!-- filtro para alergenos -->
@@ -64,156 +68,155 @@
 
 
   <main>
-    <!-- ☕ CAFÉ -->
-    <section id="cafe">
-      <h2>☕ Café</h2>
-      <ol class="cafes-lista">
-        <li class="menu-item">Espresso / Café solo – €0,90 <button onclick="agregarAlPedido('Espresso / Café solo', 0.90)">Añadir</button>
-</li>
-        <li class="menu-item alergeno-lacteos">Cortado / Bombón – €1,00<button onclick="agregarAlPedido('Cortado / Bombón', 1.00)">Añadir</button></li>
-        <li class="menu-item">Americano – €1,10<button onclick="agregarAlPedido('Americano ', 1.10)">Añadir</button></li>
-        <li class="menu-item alergeno-lacteos">Café con leche – €1,20 🥛<button onclick="agregarAlPedido('Café con leche', 1.20)">Añadir</button></li>
-        <li class="menu-item alergeno-lacteos">Cortado largo – €1,20 🥛<button onclick="agregarAlPedido('Cortado largo', 1.20)">Añadir</button></li>
-        <li class="menu-item alergeno-lacteos">Capuccino – €1,30 🥛<button onclick="agregarAlPedido('Capuccino', 1.30)">Añadir</button></li>
-        <li class="menu-item alergeno-lacteos">Flat White – €1,30 🥛<button onclick="agregarAlPedido('Flat White', 1.30)">Añadir</button></li>
-        <li class="menu-item alergeno-lacteos">Café con leche largo – €1,40 🥛<button onclick="agregarAlPedido('Café con leche largo', 1.40)">Añadir</button></li>
-        <li class="menu-item alergeno-lacteos">Barraquito con licor – €1,80 🥛<button onclick="agregarAlPedido('Barraquito con licor', 1.80)">Añadir</button></li>
-        <li class="menu-item alergeno-lacteos">Shakerato – €1,50<button onclick="agregarAlPedido('Shakerato', 1.50)">Añadir</button></li></li>
-        <li class="menu-item alergeno-lacteos">Affogato al café – €2,00 🥛<button onclick="agregarAlPedido('Affogato al café', 2.00)">Añadir</button></li>
-        <li class="menu-item alergeno-lacteos">Frappé de café – €2,50 🥛<button onclick="agregarAlPedido('Frappé de café', 2.50)">Añadir</button></li>
-        <li class="menu-item alergeno-lacteos">Patagonia Nocciola – €2,50 🥛<button onclick="agregarAlPedido('Patagonia Nocciola', 2.50)">Añadir</button></li>
-        <li class="menu-item alergeno-lacteos">Irish Coffee – €3,50 🥛<button onclick="agregarAlPedido('Irish Coffee', 3.50)">Añadir</button></li>
-        <li class="menu-item alergeno-lacteos">Cola Cao – €1,50 🥛<button onclick="agregarAlPedido('Cola Cao', 1.50)">Añadir</button></li>
-        <li class="menu-item">Infusiones Tea of Life – €1,50<button onclick="agregarAlPedido('Infusiones Tea of Life', 1.50)">Añadir</button></li>
-      </ol>
-    </section>
+   <!-- ☕ CAFÉ -->
+<section id="cafe">
+  <h2>☕ Café</h2>
+  <ol class="cafes-lista">
+    <li class="menu-item">Espresso / Café solo – €0,90 <button onclick="agregarAlPedido('Espresso / Café solo', 0.90)">Añadir</button></li>
+    <li class="menu-item alergeno-lacteos">Cortado / Bombón – €1,00 <button onclick="agregarAlPedido('Cortado / Bombón', 1.00)">Añadir</button></li>
+    <li class="menu-item">Americano – €1,10 <button onclick="agregarAlPedido('Americano', 1.10)">Añadir</button></li>
+    <li class="menu-item alergeno-lacteos">Café con leche – €1,20 🥛 <button onclick="agregarAlPedido('Café con leche', 1.20)">Añadir</button></li>
+    <li class="menu-item alergeno-lacteos">Cortado largo – €1,20 🥛 <button onclick="agregarAlPedido('Cortado largo', 1.20)">Añadir</button></li>
+    <li class="menu-item alergeno-lacteos">Capuccino – €1,30 🥛 <button onclick="agregarAlPedido('Capuccino', 1.30)">Añadir</button></li>
+    <li class="menu-item alergeno-lacteos">Flat White – €1,30 🥛 <button onclick="agregarAlPedido('Flat White', 1.30)">Añadir</button></li>
+    <li class="menu-item alergeno-lacteos">Café con leche largo – €1,40 🥛 <button onclick="agregarAlPedido('Café con leche/largo', 1.40)">Añadir</button></li>
+    <li class="menu-item alergeno-lacteos">Barraquito con licor – €1,80 🥛 <button onclick="agregarAlPedido('Barraquito con licor', 1.80)">Añadir</button></li>
+    <li class="menu-item alergeno-lacteos">Shakerato – €1,50 <button onclick="agregarAlPedido('Shakerato', 1.50)">Añadir</button></li>
+    <li class="menu-item alergeno-lacteos">Affogato al café – €2,00 🥛 <button onclick="agregarAlPedido('Affogato al café', 2.00)">Añadir</button></li>
+    <li class="menu-item alergeno-lacteos">Frappé de café – €2,50 🥛 <button onclick="agregarAlPedido('Frappé de café', 2.50)">Añadir</button></li>
+    <li class="menu-item alergeno-lacteos">Patagonia Nocciola – €2,50 🥛 <button onclick="agregarAlPedido('Patagonia Nocciola', 2.50)">Añadir</button></li>
+    <li class="menu-item alergeno-lacteos">Irish Coffee – €3,50 🥛 <button onclick="agregarAlPedido('Irish Coffee', 3.50)">Añadir</button></li>
+    <li class="menu-item alergeno-lacteos">Cola Cao – €1,50 🥛 <button onclick="agregarAlPedido('Cola Cao', 1.50)">Añadir</button></li>
+    <li class="menu-item">Infusiones Tea of Life – €1,50 <button onclick="agregarAlPedido('Infusiones Tea of Life', 1.50)">Añadir</button></li>
+  </ol>
+</section>
 
-    <!-- 🥤 BEBIDAS -->
-    <section id="bebidas">
-      <h2>🥤 Bebidas</h2>
-      <ol class="bebidas-lista">
-        <li class="menu-item">Agua Cabreiroà 0,5 L – €1,00</li>
-        <li class="menu-item">Agua Cabreiroà 1 L – €1,50</li>
-        <li class="menu-item">Zumos Minute Maid – €1,30</li>
-        <li class="menu-item">Coca-Cola / Fanta / Sprite / Nestea / Aquarius – €1,50</li>
-        <li class="menu-item">Appletiser – €1,50</li>
-        <li class="menu-item">Mare Rosso Bitter – €1,40</li>
-        <li class="menu-item">Nordic Mist Tónica / Royal Bliss – €1,40</li>
-        <li class="menu-item">Red Bull – €1,80 ⚡</li>
-        <li class="menu-item">Caña Estrella Galicia – €1,20</li>
-        <li class="menu-item">Jarra Estrella Galicia – €1,80</li>
-        <li class="menu-item">Caña 1906 – €1,80</li>
-        <li class="menu-item">Heineken / Dorada / Cruzcampo – €1,50–€1,60</li>
-        <li class="menu-item">Estrella Galicia Sin Gluten – €1,70 🌾</li>
-        <li class="menu-item">Paulaner Naturtrüb / Dunkel – €2,50</li>
-        <li class="menu-item">Vino tinto / blanco / afrutado – €1,80–€2,00</li>
-        <li class="menu-item">Caipirinha / Mojito clásico / Mojito frutas – €4,00</li>
-        <li class="menu-item">Chupito – €1,00</li>
-        <li class="menu-item">Combinado – €4,30</li>
-        <li class="menu-item">Licores – €2,50</li>
-      </ol>
-    </section>
+<!-- BEBIDAS -->
+<section id="bebidas">
+  <h2>🥤 Bebidas</h2>
+  <ol class="bebidas-lista">
+    <li class="menu-item">Agua Cabreiroà 0,5 L – €1,00 <button onclick="agregarAlPedido('Agua Cabreiroà 0,5 L', 1.00)">Añadir</button></li>
+    <li class="menu-item">Agua Cabreiroà 1 L – €1,50 <button onclick="agregarAlPedido('Agua Cabreiroà 1 L', 1.50)">Añadir</button></li>
+    <li class="menu-item">Zumos Minute Maid – €1,30 <button onclick="agregarAlPedido('Zumos Minute Maid', 1.30)">Añadir</button></li>
+    <li class="menu-item">Coca-Cola / Fanta / Sprite / Nestea / Aquarius – €1,50 <button onclick="agregarAlPedido('Refrescos variados', 1.50)">Añadir</button></li>
+    <li class="menu-item">Appletiser – €1,50 <button onclick="agregarAlPedido('Appletiser', 1.50)">Añadir</button></li>
+    <li class="menu-item">Mare Rosso Bitter – €1,40 <button onclick="agregarAlPedido('Mare Rosso Bitter', 1.40)">Añadir</button></li>
+    <li class="menu-item">Nordic Mist Tónica / Royal Bliss – €1,40 <button onclick="agregarAlPedido('Tónicas variadas', 1.40)">Añadir</button></li>
+    <li class="menu-item">Red Bull – €1,80 ⚡ <button onclick="agregarAlPedido('Red Bull', 1.80)">Añadir</button></li>
+    <li class="menu-item">Caña Estrella Galicia – €1,20 <button onclick="agregarAlPedido('Caña Estrella Galicia', 1.20)">Añadir</button></li>
+    <li class="menu-item">Jarra Estrella Galicia – €1,80 <button onclick="agregarAlPedido('Jarra Estrella Galicia', 1.80)">Añadir</button></li>
+    <li class="menu-item">Caña 1906 – €1,80 <button onclick="agregarAlPedido('Caña 1906', 1.80)">Añadir</button></li>
+    <li class="menu-item">Heineken / Dorada / Cruzcampo – €1,50–€1,60 <button onclick="agregarAlPedido('Cervezas variadas', 1.60)">Añadir</button></li>
+    <li class="menu-item">Estrella Galicia Sin Gluten – €1,70 🌾 <button onclick="agregarAlPedido('Estrella Galicia Sin Gluten', 1.70)">Añadir</button></li>
+    <li class="menu-item">Paulaner Naturtrüb / Dunkel – €2,50 <button onclick="agregarAlPedido('Paulaner Naturtrüb / Dunkel', 2.50)">Añadir</button></li>
+    <li class="menu-item">Vino tinto / blanco / afrutado – €1,80–€2,00 <button onclick="agregarAlPedido('Vino tinto / blanco / afrutado', 2.00)">Añadir</button></li>
+    <li class="menu-item">Caipirinha / Mojito clásico / Mojito frutas – €4,00 <button onclick="agregarAlPedido('Cócteles variados', 4.00)">Añadir</button></li>
+    <li class="menu-item">Chupito – €1,00 <button onclick="agregarAlPedido('Chupito', 1.00)">Añadir</button></li>
+    <li class="menu-item">Combinado – €4,30 <button onclick="agregarAlPedido('Combinado', 4.30)">Añadir</button></li>
+    <li class="menu-item">Licores – €2,50 <button onclick="agregarAlPedido('Licores', 2.50)">Añadir</button></li>
+  </ol>
+</section>
 
-    <!-- 🍹 SMOOTHIES -->
-    <section id="smoothies">
-      <h2>🍹 Smoothies</h2>
-      <ol class="jugos-lista">
-        <li class="menu-item">Naranja / Papaya / Plátano / Fresa  – €2,50</li>
-        <li class="menu-item">Frutas del bosque  / Maracuyá / Mango / Melón / Guayaba / Guanábana  – €2,60</li>
-        <li class="menu-item">Coco Verde  – €2,80</li>
-      </ol>
-    </section>
+<!-- smoothies -->
+<section id="smoothies">
+  <h2>🍹 Smoothies</h2>
+  <ol class="jugos-lista">
+    <li class="menu-item">Naranja / Papaya / Plátano / Fresa – €2,50 <button onclick="agregarAlPedido('Smoothie Naranja / Papaya / Plátano / Fresa', 2.50)">Añadir</button></li>
+    <li class="menu-item">Frutas del bosque / Maracuyá / Mango / Melón / Guayaba / Guanábana – €2,60 <button onclick="agregarAlPedido('Smoothie Frutas del bosque / Maracuyá / Mango / Melón / Guayaba / Guanábana', 2.60)">Añadir</button></li>
+    <li class="menu-item">Coco Verde – €2,80 <button onclick="agregarAlPedido('Smoothie Coco Verde', 2.80)">Añadir</button></li>
+  </ol>
+</section>
 
-    <!-- 🍰 POSTRES -->
-    <section id="postres">
-      <h2>🍰 Postres</h2>
-      <ol class="postres-lista">
-  <li class="menu-item alergeno-lacteos alergeno-huevo alergeno-gluten">Tartas (variedad) – €2,90–€3,50 🥛 🥚 🌾</li>
-  <li class="menu-item alergeno-lacteos alergeno-huevo alergeno-gluten">Delicias de Otoño – €4,50 🥛 🥚 🌾</li>
-  <li class="menu-item alergeno-lacteos alergeno-huevo">Banana Split – €5,00 🥛 🥚</li>
-</ol>
+<!-- desayunos -->
 
-    </section>
+   <section id="desayunos">
+  <h2>🍳 Desayunos (hasta las 13:00)</h2>
+  <ol class="bocadillos-lista">
+    <li class="menu-item alergeno-harina alergeno-lacteos">Tradicional – €3,00 🥐 🥛 <button onclick="agregarAlPedido('Desayuno Tradicional', 3.00)">Añadir</button></li>
+    <li class="menu-item alergeno-lacteos alergeno-frutos">Queso crema – €3,20 🥛 🥜 <button onclick="agregarAlPedido('Desayuno Queso crema', 3.20)">Añadir</button></li>
+    <li class="menu-item alergeno-gluten">Saludable – €3,50 🌾 <button onclick="agregarAlPedido('Desayuno Saludable', 3.50)">Añadir</button></li>
+    <li class="menu-item vegano">Hummus – €3,60 🌱 <button onclick="agregarAlPedido('Desayuno Hummus', 3.60)">Añadir</button></li>
+    <li class="menu-item alergeno-gluten">Ibérico – €3,70 🌾 <button onclick="agregarAlPedido('Desayuno Ibérico', 3.70)">Añadir</button></li>
+  </ol>
+</section>
 
-    <!-- 🍳 DESAYUNOS -->
-    <section id="desayunos">
-      <h2>🍳 Desayunos (hasta las 13:00)</h2>
-      <ol class="bocadillos-lista">
-  <li class="menu-item alergeno-harina alergeno-lacteos">Tradicional – €3,00 🥐 🥛</li>
-  <li class="menu-item alergeno-lacteos alergeno-frutos">Queso crema – €3,20 🥛 🥜</li>
-  <li class="menu-item alergeno-gluten">Saludable – €3,50 🌾</li>
-  <li class="menu-item vegano">Hummus – €3,60 🌱</li>
-  <li class="menu-item alergeno-gluten">Ibérico – €3,70 🌾</li>
-</ol>
 
-    </section>
-
-    <!-- 🥪 SANDWICHES -->
+<!-- sandwiches -->
+    
     <section id="sandwiches">
-      <h2>🥪 Sandwiches</h2>
-      <ol class="sandwiches-lista">
-  <li class="menu-item alergeno-lacteos alergeno-gluten">Mixto – €1,60 🥛 🌾</li>
-  <li class="menu-item alergeno-lacteos alergeno-gluten">Queso Blanco – €2,40 🥛 🌾</li>
-  <li class="menu-item alergeno-gluten">Pollo – €2,20 🌾</li>
-  <li class="menu-item alergeno-lacteos alergeno-gluten">Vegetariano – €2,90 🥛 🌾</li>
-  <li class="menu-item vegano">Vegano de Tofu – €3,00 🌱</li>
-  <li class="menu-item alergeno-lacteos alergeno-huevo alergeno-gluten">Triple – €3,00 🥛 🥚 🌾</li>
-</ol>
-
-    </section>
+  <h2>🥪 Sandwiches</h2>
+  <ol class="sandwiches-lista">
+    <li class="menu-item alergeno-lacteos alergeno-gluten">Mixto – €1,60 🥛 🌾 <button onclick="agregarAlPedido('Sandwich Mixto', 1.60)">Añadir</button></li>
+    <li class="menu-item alergeno-lacteos alergeno-gluten">Queso Blanco – €2,40 🥛 🌾 <button onclick="agregarAlPedido('Sandwich Queso Blanco', 2.40)">Añadir</button></li>
+    <li class="menu-item alergeno-gluten">Pollo – €2,20 🌾 <button onclick="agregarAlPedido('Sandwich Pollo', 2.20)">Añadir</button></li>
+    <li class="menu-item alergeno-lacteos alergeno-gluten">Vegetariano – €2,90 🥛 🌾 <button onclick="agregarAlPedido('Sandwich Vegetariano', 2.90)">Añadir</button></li>
+    <li class="menu-item vegano">Vegano de Tofu – €3,00 🌱 <button onclick="agregarAlPedido('Sandwich Vegano de Tofu', 3.00)">Añadir</button></li>
+    <li class="menu-item alergeno-lacteos alergeno-huevo alergeno-gluten">Triple – €3,00 🥛 🥚 🌾 <button onclick="agregarAlPedido('Sandwich Triple', 3.00)">Añadir</button></li>
+  </ol>
+</section>
 
     <!-- 🥗 ENSALADAS -->
-    <section id="ensaladas">
-      <h2>🥗 Ensaladas</h2>
-      <ol class="wraps-lista">
-  <li class="menu-item">Pollo – €4,70</li> <!-- No se especifican alérgenos, se puede dejar sin clases o revisar ingredientes -->
-  <li class="menu-item alergeno-lacteos alergeno-frutos">Galileo – €4,70 🥛 🥜</li>
-  <li class="menu-item vegano alergeno-frutos">Darwin – €4,95 🌱 🥜</li>
-</ol>
+<section id="ensaladas">
+  <h2>🥗 Ensaladas</h2>
+  <ol class="wraps-lista">
+    <li class="menu-item">Pollo – €4,70 <button onclick="agregarAlPedido('Ensalada Pollo', 4.70)">Añadir</button></li>
+    <li class="menu-item alergeno-lacteos alergeno-frutos">Galileo – €4,70 🥛 🥜 <button onclick="agregarAlPedido('Ensalada Galileo', 4.70)">Añadir</button></li>
+    <li class="menu-item vegano alergeno-frutos">Darwin – €4,95 🌱 🥜 <button onclick="agregarAlPedido('Ensalada Darwin', 4.95)">Añadir</button></li>
+  </ol>
+</section>
 
-    </section>
 
     <!-- 🍔 HAMBURGUESAS -->
     <section id="hamburguesas">
-      <h2>🍔 Hamburguesas (con papas Deluxe)</h2>
-      <ol class="tostadas-lista">
-  <li class="menu-item alergeno-gluten alergeno-lacteos">Clásica – €3,80 🌾 🥛</li>
-  <li class="menu-item alergeno-gluten alergeno-lacteos">Especial – €4,90 🌾 🥛</li>
-  <li class="menu-item vegano alergeno-gluten">Patagonia – €6,00 🌱 🌾</li>
-</ol>
+  <h2>🍔 Hamburguesas (con papas Deluxe)</h2>
+  <ol class="tostadas-lista">
+    <li class="menu-item alergeno-gluten alergeno-lacteos">Clásica – €3,80 🌾 🥛 <button onclick="agregarAlPedido('Hamburguesa Clásica', 3.80)">Añadir</button></li>
+    <li class="menu-item alergeno-gluten alergeno-lacteos">Especial – €4,90 🌾 🥛 <button onclick="agregarAlPedido('Hamburguesa Especial', 4.90)">Añadir</button></li>
+    <li class="menu-item vegano alergeno-gluten">Patagonia – €6,00 🌱 🌾 <button onclick="agregarAlPedido('Hamburguesa Patagonia', 6.00)">Añadir</button></li>
+  </ol>
+</section>
 
-    </section>
 
     <!-- 🥖 BOCADILLOS -->
-    <section id="bocadillos">
-      <h2>🥖 Bocadillos</h2>
-      <ol class="bocadillos-lista">
-  <li class="menu-item alergeno-gluten alergeno-lacteos">Pollo – €1,50 / €2,70 🌾 🥛</li>
-  <li class="menu-item alergeno-gluten">Jamón Serrano – €1,60 / €2,80 🌾</li>
-  <li class="menu-item alergeno-gluten alergeno-lacteos">Pata Asada – €1,70 / €2,90 🌾 🥛</li>
-  <li class="menu-item alergeno-gluten alergeno-lacteos">Vegetariano – €1,90 / €3,20 🥛 🌾</li>
-  <li class="menu-item vegano alergeno-gluten">Vegano de Tofu – €2,00 / €3,30 🌱 🌾</li>
-  <li class="menu-item vegano alergeno-gluten">Vegano de Tempeh – €2,00 / €3,30 🌱 🌾</li>
-</ol>
+   <section id="bocadillos">
+  <h2>🥖 Bocadillos</h2>
+  <ol class="bocadillos-lista">
+    <li class="menu-item alergeno-gluten alergeno-lacteos">Pollo – €1,50 / €2,70 🌾 🥛 <button onclick="agregarAlPedido('Bocadillo Pollo', 2.70)">Añadir</button></li>
+    <li class="menu-item alergeno-gluten">Jamón Serrano – €1,60 / €2,80 🌾 <button onclick="agregarAlPedido('Bocadillo Jamón Serrano', 2.80)">Añadir</button></li>
+    <li class="menu-item alergeno-gluten alergeno-lacteos">Pata Asada – €1,70 / €2,90 🌾 🥛 <button onclick="agregarAlPedido('Bocadillo Pata Asada', 2.90)">Añadir</button></li>
+    <li class="menu-item alergeno-gluten alergeno-lacteos">Vegetariano – €1,90 / €3,20 🥛 🌾 <button onclick="agregarAlPedido('Bocadillo Vegetariano', 3.20)">Añadir</button></li>
+    <li class="menu-item vegano alergeno-gluten">Vegano de Tofu – €2,00 / €3,30 🌱 🌾 <button onclick="agregarAlPedido('Bocadillo Vegano de Tofu', 3.30)">Añadir</button></li>
+    <li class="menu-item vegano alergeno-gluten">Vegano de Tempeh – €2,00 / €3,30 🌱 🌾 <button onclick="agregarAlPedido('Bocadillo Vegano de Tempeh', 3.30)">Añadir</button></li>
+  </ol>
+</section>
 
-    </section>
 
     <!-- 🍢 PARA PICAR -->
     <section id="picar">
-      <h2>🍢 Para Picar</h2>
-      <ol class="snacks-lista">
-  <li class="menu-item alergeno-gluten">Nachos – €3,00 🌾</li>
-  <li class="menu-item alergeno-gluten">Deluxe – €3,00 🌾</li>
-  <li class="menu-item alergeno-lacteos">Papas locas – €3,50 🥛</li>
-  <li class="menu-item alergeno-lacteos">Papas cheddar – €3,50 🥛</li>
-  <li class="menu-item alergeno-lacteos">Papas bacon – €3,50 🥛</li>
-  <li class="menu-item vegano">Papas tempeh – €3,50 🌱</li>
-  <li class="menu-item vegano">Papas tofu – €3,50 🌱</li>
-  <li class="menu-item vegano">Hummus – €4,50 🌱</li>
-</ol>
+  <h2>🍢 Para Picar</h2>
+  <ol class="snacks-lista">
+    <li class="menu-item alergeno-gluten">Nachos – €3,00 🌾 <button onclick="agregarAlPedido('Nachos', 3.00)">Añadir</button></li>
+    <li class="menu-item alergeno-gluten">Deluxe – €3,00 🌾 <button onclick="agregarAlPedido('Deluxe', 3.00)">Añadir</button></li>
+    <li class="menu-item alergeno-lacteos">Papas locas – €3,50 🥛 <button onclick="agregarAlPedido('Papas locas', 3.50)">Añadir</button></li>
+    <li class="menu-item alergeno-lacteos">Papas cheddar – €3,50 🥛 <button onclick="agregarAlPedido('Papas cheddar', 3.50)">Añadir</button></li>
+    <li class="menu-item alergeno-lacteos">Papas bacon – €3,50 🥛 <button onclick="agregarAlPedido('Papas bacon', 3.50)">Añadir</button></li>
+    <li class="menu-item vegano">Papas tempeh – €3,50 🌱 <button onclick="agregarAlPedido('Papas tempeh', 3.50)">Añadir</button></li>
+    <li class="menu-item vegano">Papas tofu – €3,50 🌱 <button onclick="agregarAlPedido('Papas tofu', 3.50)">Añadir</button></li>
+    <li class="menu-item vegano">Hummus – €4,50 🌱 <button onclick="agregarAlPedido('Hummus', 4.50)">Añadir</button></li>
+  </ol>
+</section>
 
-    </section>
   </main>
+
+  <!-- ticket -->
+
+<section id="resumenPedido" class="resumen-pedido">
+  <h3>🧾 Tu Pedido</h3>
+  <p id="fechaHora" class="fecha-hora"></p>
+  <ul id="listaPedido"></ul>
+  <p><strong>Total:</strong> <span id="totalPedido">€0.00</span></p>
+  <button onclick="vaciarPedido()">🗑️ Vaciar</button>
+</section>
 
   <!-- leyenda alergenos -->
   <div class="leyenda-alergenos">
@@ -229,6 +232,7 @@
     <li><span>🌱</span> Vegano</li>
   </ul>
 </div>
+
 
 
   <footer>

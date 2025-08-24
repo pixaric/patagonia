@@ -34,6 +34,18 @@ function vaciarPedido() {
   actualizarResumen();
 }
 
+// pop-up
+function mostrarPopup() {
+  document.getElementById("popupOferta").style.display = "flex";
+}
+
+function cerrarPopup() {
+  document.getElementById("popupOferta").style.display = "none";
+}
+
+// Mostrar el popup después de 3 segundos
+setTimeout(mostrarPopup, 3000);
+
 function mostrarFechaHora() {
   const ahora = new Date();
   const opciones = {
