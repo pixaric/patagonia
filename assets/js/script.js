@@ -61,3 +61,42 @@ botonSubir.addEventListener('click', () => {
   });
 });
 
+// QR
+
+function generarQR() {
+  if (!pedido || pedido.length === 0) return;
+
+  let resumen = "Producto             Cantidad   Subtotal\n";
+  resumen += "----------------------------------------\n";
+  let total = 0;
+
+  pedido.forEach(p => {
+    const subtotal = p.precio * p.cantidad;
+    total += subtotal;
+
+    const nombre = p.nombre.padEnd(20); // columna 1
+    const cantidad = `x${p.cantidad}`.padEnd(10); // columna 2
+    const precio = `${subtotal.toFixed(2)} EUR`; // columna 3
+
+    resumen += `${nombre}${cantidad}${precio}\n`;
+  });
+
+  resumen += "----------------------------------------\n";
+  resumen += "Total".padEnd(30) + `${total.toFixed(2)} EUR`;
+
+  new QRious({
+    element: document.getElementById("codigoQR"),
+    value: resumen,
+    size: 200,
+    background: "#fffdf5",
+    foreground: "#4B2E2E",
+    level: "H"
+  });
+}
+
+
+
+
+
+
+

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Generador QR</title>
+  <script src="https://cdn.jsdelivr.net/npm/qrious@4.0.2/dist/qrious.min.js"></script>
+
+  <style>
+    #qrPedido {
+      margin: 2em auto;
+      text-align: center;
+      padding: 1em;
+      background-color: #fffdf5;
+      border: 2px dashed #d8bfa3;
+      border-radius: 12px;
+      box-shadow: 0 0 12px rgba(0,0,0,0.1);
+      width: fit-content;
+    }
+    .boton-qr {
+      display: block;
+      margin: 1em auto;
+      padding: 0.6em 1.2em;
+      background-color: #7B4F3D;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 0.9em;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <button onclick="generarQR()">📲 Generar QR</button>
+
+
+  <canvas id="codigoQR"></canvas>
+
+  <div id="qrPedido"></div>
+
+  <script>
+    const pedido = [
+      { nombre: "Café con leche", precio: 1.20 },
+      { nombre: "Croissant", precio: 1.50 }
+    ];
+
+    function generarQR() {
+  if (!pedido || pedido.length === 0) {
+    alert("No hay productos en el pedido.");
+    return;
+  }
+
+  const resumen = pedido.map(p => `${p.nombre} – €${p.precio.toFixed(2)}`).join('\n');
+
+  const qr = new QRious({
+    element: document.getElementById("codigoQR"),
+    value: resumen,
+    size: 200,
+    background: "#fffdf5",
+    foreground: "#4B2E2E",
+    level: "H"
+  });
+}
+
+  </script>
+
+</body>
+</html>

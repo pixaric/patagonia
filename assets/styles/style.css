@@ -21,7 +21,7 @@ body {
 
 body {
   overflow-y: scroll;
-  scrollbar-width: none; /* Firefox */
+  
 }
 
 body::-webkit-scrollbar {
@@ -419,7 +419,6 @@ footer a:hover {
   transform: scale(1.1);
   background-color: var(--cafe-medio);
 }
-
 
 
 
