@@ -31,13 +31,7 @@ function vaciarPedido() {
   generarQR();
 }
 
-function cambiarCantidadUI(inputId, cambio) {
-  const input = document.getElementById(inputId);
-  let valor = parseInt(input.value);
-  valor = isNaN(valor) ? 1 : valor + cambio;
-  if (valor < 1) valor = 1;
-  input.value = valor;
-}
+
 
 function actualizarResumen() {
   const lista = document.getElementById("listaPedido");

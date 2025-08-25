@@ -16,22 +16,23 @@
 .popup-contenido {
   background-color: var(--crema);
   border: 2px dashed var(--cafe-claro);
-  padding: 2em;
-  margin: 1.5em;
+  padding: 1.2em;              /* Menos espacio interno */
+  margin: 0.8em;               /* Menos margen externo */
   text-align: center;
-  box-shadow: 0 0 20px var(--sombra-suave);
-  max-width: 350px;
-  border-radius: 12px;
+  box-shadow: 0 0 12px var(--sombra-suave); /* Sombra más sutil */
+  max-width: 280px;            /* Más estrecho */
+  border-radius: 10px;         /* Bordes más suaves */
   position: relative;
-  animation: zoomIn 0.4s ease;
+  animation: zoomIn 0.3s ease;
 }
 
 
 .popup-contenido img {
-  max-width: 100%;
-  border-radius: 8px;
-  margin: 1em 0;
+  max-width: 90%;
+  border-radius: 6px;
+  margin: 0.8em 0;
 }
+
 
 .cerrar-popup {
   position: absolute;
