@@ -29,7 +29,7 @@ body::-webkit-scrollbar {
 }
 
 /* 🧭 Encabezado */
-header {
+.cabecera {
   background-color: var(--cafe-claro);
   padding: 0.5rem 0.1rem 0.1rem;
   text-align: center;
@@ -286,7 +286,7 @@ section {
   max-width: 900px;
   margin: auto;
   border-bottom: 1px solid var(--cafe-claro);
-  scroll-margin-top: 80px; /* ajusta según la altura de tu cabecera */
+  scroll-margin-top: 100px; /* ajusta según la altura de tu cabecera */
 }
 
 section h2 {
@@ -326,11 +326,7 @@ footer {
   border-top: 2px solid var(--blanco);
 }
 
-footer a {
-  color: var(--cafe-medio);
-  text-decoration: none;
-  font-weight: bold;
-}
+
 
 footer a:hover {
   text-decoration: underline;

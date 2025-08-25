@@ -1,12 +1,6 @@
 
 /* 📦 Secciones del menú */
-section {
-  padding: 2rem 1rem;
-  max-width: 900px;
-  margin: auto;
-  border-bottom: 1px solid var(--cafe-claro);
-  scroll-margin-top: 80px; /* ajusta según la altura de tu cabecera */
-}
+
 
 section h2 {
   font-size: 1.8rem;
@@ -35,25 +29,7 @@ ol {
   text-decoration: underline;
 }
 
-/* 🧾 Footer */
-footer {
-  text-align: center;
-  padding: 1rem;
-  background-color: var(--cafe-claro);
-  color: var(--cafe-oscuro);
-  font-size: 0.9rem;
-  border-top: 2px solid var(--blanco);
-}
 
-footer a {
-  color: var(--cafe-medio);
-  text-decoration: none;
-  font-weight: bold;
-}
-
-footer a:hover {
-  text-decoration: underline;
-}
 
 /*leyenda aleergenos*/
 .leyenda-alergenos {
@@ -94,7 +70,7 @@ footer a:hover {
     padding: 1.5rem 1rem;
   }
 
-  h1 {
+  .header-container h1 {
     font-size: 2rem;
   }
 
