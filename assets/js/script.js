@@ -66,17 +66,25 @@ botonSubir.addEventListener('click', () => {
 function generarQR() {
   if (!pedido || pedido.length === 0) return;
 
-  let resumen = "Producto             Cantidad   Subtotal\n";
+  const mesa = document.getElementById("numeroMesa")?.value || "Sin asignar";
+
+  const ahora = new Date();
+  const fecha = ahora.toLocaleDateString();
+  const hora = ahora.toLocaleTimeString();
+
+  let resumen = `Mesa: ${mesa}\nFecha: ${fecha}  Hora: ${hora}\n`;
+  resumen += "Producto             Cantidad   Subtotal\n";
   resumen += "----------------------------------------\n";
+
   let total = 0;
 
   pedido.forEach(p => {
     const subtotal = p.precio * p.cantidad;
     total += subtotal;
 
-    const nombre = p.nombre.padEnd(20); // columna 1
+    const nombre = p.nombre.padEnd(20);       // columna 1
     const cantidad = `x${p.cantidad}`.padEnd(10); // columna 2
-    const precio = `${subtotal.toFixed(2)} EUR`; // columna 3
+    const precio = `${subtotal.toFixed(2)} EUR`;  // columna 3
 
     resumen += `${nombre}${cantidad}${precio}\n`;
   });
@@ -93,6 +101,7 @@ function generarQR() {
     level: "H"
   });
 }
+
 
 
 

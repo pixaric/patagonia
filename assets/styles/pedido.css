@@ -43,10 +43,61 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.3em 0;
-  border-bottom: 1px dotted #ddd;
-  font-size: 0.95em;
+  padding: 0.4em 0;
+  border-bottom: 1px solid #eee;
+  gap: 1em; /* Espacio entre elementos */
 }
+
+.item-ticket .producto-nombre {
+  flex: 2;
+  text-align: left;
+}
+
+.item-ticket .cantidad-ticket {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  gap: 0.4em;
+}
+
+.item-ticket .subtotal {
+  flex: 1;
+  text-align: right;
+  font-weight: bold;
+  color: #4B2E2E;
+}
+.cantidad-ticket {
+  display: flex;
+  flex-direction: row;       /* ← Alineación horizontal */
+  align-items: center;       /* Centrado vertical */
+  justify-content: center;   /* Centrado horizontal */
+  gap: 0.5em;                /* Espacio entre botones y cantidad */
+}
+
+
+.cantidad-ticket button {
+  padding: 0.2em 0.6em;
+  font-size: 0.85em;
+  background-color: #d8bfa3;
+  color: #4B2E2E;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.cantidad-ticket button:hover {
+  background-color: #c2a98c;
+}
+
+.cantidad-ticket span {
+  font-size: 0.9em;
+  font-weight: bold;
+  color: #4B2E2E;
+}
+
+
+
 
 .producto-nombre {
   flex: 1;
@@ -134,13 +185,58 @@
 }
 
 .qr-container {
-  margin: 1.5em auto;
-  text-align: center;
-  padding: 1em;
-  background-color: var(--crema);
-  border: 2px dashed var(--cafe-claro);
-  border-radius: 12px;
-  box-shadow: 0 0 12px var(--sombra-suave);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem auto;
+}
+
+#codigoQR {
+  display: block;
+  margin: auto;
+}
+
+.pedido-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.pedido-header {
+  display: flex;
+  justify-content: space-between; /* ← separa título e input */
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.qr-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+}
+/* inpud de la mesa*/
+.mesa-input {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 1rem;
+}
+
+.mesa-input label {
+  font-weight: bold;
+  color: #4B2E2E;
+}
+
+#numeroMesa {
+  padding: 0.4em 0.6em;
+  font-size: 1em;
+  width: 30px;
+  border: 1px solid #d8bfa3;
+  border-radius: 6px;
+  background-color: #fffdf5;
+  color: #4B2E2E;
 }
 
 

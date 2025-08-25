@@ -73,48 +73,31 @@
   <main>
   <!--contenido -->
   <main id="contenido"></main>
-
+<div id="cafes"></div>
 <script>
   fetch("menus/cafes.html")
     .then(res => res.text())
     .then(html => {
-      document.getElementById("contenido").innerHTML = html;
+      document.getElementById("cafes").innerHTML = html;
     })
     .catch(err => {
-      console.error("Error al cargar el menú:", err);
+      console.error("Error al cargar el menú de cafés:", err);
     });
 </script>
 
 
-
-
-
-
 <!-- BEBIDAS -->
-<section id="bebidas">
-  <h2>🥤 Bebidas</h2>
-  <ol class="bebidas-lista">
-    <li class="menu-item">Agua Cabreiroà 0,5 L – €1,00 <button onclick="agregarAlPedido('Agua Cabreiroà 0,5 L', 1.00)">Añadir</button></li>
-    <li class="menu-item">Agua Cabreiroà 1 L – €1,50 <button onclick="agregarAlPedido('Agua Cabreiroà 1 L', 1.50)">Añadir</button></li>
-    <li class="menu-item">Zumos Minute Maid – €1,30 <button onclick="agregarAlPedido('Zumos Minute Maid', 1.30)">Añadir</button></li>
-    <li class="menu-item">Coca-Cola / Fanta / Sprite / Nestea / Aquarius – €1,50 <button onclick="agregarAlPedido('Refrescos variados', 1.50)">Añadir</button></li>
-    <li class="menu-item">Appletiser – €1,50 <button onclick="agregarAlPedido('Appletiser', 1.50)">Añadir</button></li>
-    <li class="menu-item">Mare Rosso Bitter – €1,40 <button onclick="agregarAlPedido('Mare Rosso Bitter', 1.40)">Añadir</button></li>
-    <li class="menu-item">Nordic Mist Tónica / Royal Bliss – €1,40 <button onclick="agregarAlPedido('Tónicas variadas', 1.40)">Añadir</button></li>
-    <li class="menu-item">Red Bull – €1,80 ⚡ <button onclick="agregarAlPedido('Red Bull', 1.80)">Añadir</button></li>
-    <li class="menu-item">Caña Estrella Galicia – €1,20 <button onclick="agregarAlPedido('Caña Estrella Galicia', 1.20)">Añadir</button></li>
-    <li class="menu-item">Jarra Estrella Galicia – €1,80 <button onclick="agregarAlPedido('Jarra Estrella Galicia', 1.80)">Añadir</button></li>
-    <li class="menu-item">Caña 1906 – €1,80 <button onclick="agregarAlPedido('Caña 1906', 1.80)">Añadir</button></li>
-    <li class="menu-item">Heineken / Dorada / Cruzcampo – €1,50–€1,60 <button onclick="agregarAlPedido('Cervezas variadas', 1.60)">Añadir</button></li>
-    <li class="menu-item">Estrella Galicia Sin Gluten – €1,70 🌾 <button onclick="agregarAlPedido('Estrella Galicia Sin Gluten', 1.70)">Añadir</button></li>
-    <li class="menu-item">Paulaner Naturtrüb / Dunkel – €2,50 <button onclick="agregarAlPedido('Paulaner Naturtrüb / Dunkel', 2.50)">Añadir</button></li>
-    <li class="menu-item">Vino tinto / blanco / afrutado – €1,80–€2,00 <button onclick="agregarAlPedido('Vino tinto / blanco / afrutado', 2.00)">Añadir</button></li>
-    <li class="menu-item">Caipirinha / Mojito clásico / Mojito frutas – €4,00 <button onclick="agregarAlPedido('Cócteles variados', 4.00)">Añadir</button></li>
-    <li class="menu-item">Chupito – €1,00 <button onclick="agregarAlPedido('Chupito', 1.00)">Añadir</button></li>
-    <li class="menu-item">Combinado – €4,30 <button onclick="agregarAlPedido('Combinado', 4.30)">Añadir</button></li>
-    <li class="menu-item">Licores – €2,50 <button onclick="agregarAlPedido('Licores', 2.50)">Añadir</button></li>
-  </ol>
-</section>
+<div id="bebidas"></div>
+<script>
+  fetch("menus/bebidas.html")
+    .then(res => res.text())
+    .then(html => {
+      document.getElementById("bebidas").innerHTML = html;
+    })
+    .catch(err => {
+      console.error("Error al cargar el menú de bebidas:", err);
+    });
+</script>
 
 <!-- smoothies -->
 <section id="smoothies">
@@ -208,20 +191,39 @@
   </main>
 
   <!-- ticket -->
-
 <section id="resumenPedido" class="resumen-pedido">
-  
+  <div class="pedido-header">
+    <h3>🧾 Tu Pedido</h3>
+    
 
-  <h3>🧾 Tu Pedido</h3>
+<div class="mesa-input">
+  <label for="numeroMesa">Mesa:</label>
+  <input
+    type="text"
+    id="numeroMesa"
+    name="numeroMesa"
+    placeholder="##"
+    pattern="^[1-9][0-9]*$"
+    required
+    inputmode="numeric"
+    title="Introduce solo números enteros positivos"
+  />
+</div>
+
+
+
+  </div>
+
   <p id="fechaHora" class="fecha-hora"></p>
   <ul id="listaPedido"></ul>
   <p><strong>Total:</strong> <span id="totalPedido">€0.00</span></p>
+
   <button onclick="vaciarPedido()">🗑️ Vaciar</button>
+  <!--<button onclick="generarQR()">📲 Generar QR</button>-->
 
-  <button onclick="generarQR()">📲 Generar QR</button>
-
-
-<canvas id="codigoQR"></canvas>
+  <div class="qr-container">
+    <canvas id="codigoQR"></canvas>
+  </div>
 </section>
 
 
@@ -264,9 +266,16 @@
     document.querySelector('.nav-links').classList.toggle('show');
   }
 </script>
+<script src="https://davidshimjs.github.io/qrcodejs/qrcode.min.js"></script>
 
 <script src="assets/js/script.js"></script>
-<script src="assets/js/pedido.js" defer></script>
+
+<script src="assets/js/general.js" defer></script>
+<!--
+<script src="assets/js/qr.js" defer></script>
+<script src="assets/js/menus.js" defer></script>
+-->
+
 
 <script src="https://cdn.jsdelivr.net/npm/qrious@4.0.2/dist/qrious.min.js"></script>
 

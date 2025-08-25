@@ -7,36 +7,9 @@ function agregarAlPedido(nombre, precio) {
   } else {
     pedido.push({ nombre, precio, cantidad: 1 });
   }
+
   actualizarResumen();
   generarQR();
-}
-
-function agregarConCantidad(nombre, precio, inputId) {
-  const cantidad = parseInt(document.getElementById(inputId).value);
-  if (isNaN(cantidad) || cantidad < 1) return;
-
-  const existente = pedido.find(p => p.nombre === nombre);
-  if (existente) {
-    existente.cantidad += cantidad;
-  } else {
-    pedido.push({ nombre, precio, cantidad });
-  }
-  actualizarResumen();
-  generarQR();
-}
-
-function vaciarPedido() {
-  pedido = [];
-  actualizarResumen();
-  generarQR();
-}
-
-function cambiarCantidadUI(inputId, cambio) {
-  const input = document.getElementById(inputId);
-  let valor = parseInt(input.value);
-  valor = isNaN(valor) ? 1 : valor + cambio;
-  if (valor < 1) valor = 1;
-  input.value = valor;
 }
 
 function actualizarResumen() {
@@ -52,10 +25,12 @@ function actualizarResumen() {
     const li = document.createElement("li");
     li.className = "item-ticket";
 
+    // Nombre del producto
     const nombre = document.createElement("span");
     nombre.className = "producto-nombre";
     nombre.textContent = producto.nombre;
 
+    // Controles de cantidad
     const cantidadControl = document.createElement("div");
     cantidadControl.className = "cantidad-ticket";
 
@@ -85,6 +60,7 @@ function actualizarResumen() {
     cantidadControl.appendChild(cantidad);
     cantidadControl.appendChild(btnMas);
 
+    // Subtotal
     const subtotal = document.createElement("span");
     subtotal.className = "subtotal";
     subtotal.textContent = `€${(producto.precio * producto.cantidad).toFixed(2)}`;
@@ -99,3 +75,47 @@ function actualizarResumen() {
 
   total.textContent = `€${suma.toFixed(2)}`;
 }
+
+
+function vaciarPedido() {
+  pedido = [];
+  actualizarResumen();
+  generarQR();
+}
+
+function cambiarCantidadUI(inputId, cambio) {
+  const input = document.getElementById(inputId);
+  let valor = parseInt(input.value);
+  valor = isNaN(valor) ? 1 : valor + cambio;
+  if (valor < 1) valor = 1;
+  input.value = valor;
+}
+
+// Opcional: inicialización segura
+document.addEventListener("DOMContentLoaded", () => {
+  const mesaInput = document.getElementById("numeroMesa");
+  if (mesaInput) {
+    mesaInput.addEventListener("input", () => {
+      generarQR();
+    });
+  }
+});
+
+  // mostrarFechaHora(); ← solo si está definida
+
+
+function agregarConCantidad(nombre, precio, inputId) {
+  const cantidad = parseInt(document.getElementById(inputId).value);
+  if (isNaN(cantidad) || cantidad < 1) return;
+
+  const existente = pedido.find(p => p.nombre === nombre);
+  if (existente) {
+    existente.cantidad += cantidad;
+  } else {
+    pedido.push({ nombre, precio, cantidad });
+  }
+
+  actualizarResumen();
+  generarQR();
+}
+

@@ -1,0 +1,182 @@
+<link rel="stylesheet" href="assets/styles/style.css">
+
+<section id="bebidas">
+  <h2>🥤 Bebidas</h2>
+  <ol class="bebidas-lista">
+
+    <li class="menu-item">Agua Cabreiroà 0,5 L – €1,00
+      <div class="cantidad-control">
+        <button onclick="cambiarCantidadUI('cantidad-agua05', -1)">➖</button>
+        <input type="number" min="1" value="0" id="cantidad-agua05" readonly aria-label="Cantidad para Agua Cabreiroà 0,5 L">
+        <button onclick="cambiarCantidadUI('cantidad-agua05', 1)">➕</button>
+        <button onclick="agregarConCantidad('Agua Cabreiroà 0,5 L', 1.00, 'cantidad-agua05')">Añadir</button>
+      </div>
+    </li>
+
+    <li class="menu-item">Agua Cabreiroà 1 L – €1,50
+      <div class="cantidad-control">
+        <button onclick="cambiarCantidadUI('cantidad-agua1l', -1)">➖</button>
+        <input type="number" min="1" value="0" id="cantidad-agua1l" readonly aria-label="Cantidad para Agua Cabreiroà 1 L">
+        <button onclick="cambiarCantidadUI('cantidad-agua1l', 1)">➕</button>
+        <button onclick="agregarConCantidad('Agua Cabreiroà 1 L', 1.50, 'cantidad-agua1l')">Añadir</button>
+      </div>
+    </li>
+
+    <li class="menu-item">Zumos Minute Maid – €1,30
+      <div class="cantidad-control">
+        <button onclick="cambiarCantidadUI('cantidad-zumos', -1)">➖</button>
+        <input type="number" min="1" value="0" id="cantidad-zumos" readonly aria-label="Cantidad para Zumos Minute Maid">
+        <button onclick="cambiarCantidadUI('cantidad-zumos', 1)">➕</button>
+        <button onclick="agregarConCantidad('Zumos Minute Maid', 1.30, 'cantidad-zumos')">Añadir</button>
+      </div>
+    </li>
+
+    <li class="menu-item">Coca-Cola / Fanta / Sprite / Nestea / Aquarius – €1,50
+      <div class="cantidad-control">
+        <button onclick="cambiarCantidadUI('cantidad-refrescos', -1)">➖</button>
+        <input type="number" min="1" value="0" id="cantidad-refrescos" readonly aria-label="Cantidad para Refrescos variados">
+        <button onclick="cambiarCantidadUI('cantidad-refrescos', 1)">➕</button>
+        <button onclick="agregarConCantidad('Refrescos variados', 1.50, 'cantidad-refrescos')">Añadir</button>
+      </div>
+    </li>
+
+    <li class="menu-item">Appletiser – €1,50
+      <div class="cantidad-control">
+        <button onclick="cambiarCantidadUI('cantidad-appletiser', -1)">➖</button>
+        <input type="number" min="1" value="0" id="cantidad-appletiser" readonly aria-label="Cantidad para Appletiser">
+        <button onclick="cambiarCantidadUI('cantidad-appletiser', 1)">➕</button>
+        <button onclick="agregarConCantidad('Appletiser', 1.50, 'cantidad-appletiser')">Añadir</button>
+      </div>
+    </li>
+
+    <li class="menu-item">Mare Rosso Bitter – €1,40
+      <div class="cantidad-control">
+        <button onclick="cambiarCantidadUI('cantidad-mare', -1)">➖</button>
+        <input type="number" min="1" value="0" id="cantidad-mare" readonly aria-label="Cantidad para Mare Rosso Bitter">
+        <button onclick="cambiarCantidadUI('cantidad-mare', 1)">➕</button>
+        <button onclick="agregarConCantidad('Mare Rosso Bitter', 1.40, 'cantidad-mare')">Añadir</button>
+      </div>
+    </li>
+
+    <li class="menu-item">Nordic Mist Tónica / Royal Bliss – €1,40
+      <div class="cantidad-control">
+        <button onclick="cambiarCantidadUI('cantidad-tonicas', -1)">➖</button>
+        <input type="number" min="1" value="0" id="cantidad-tonicas" readonly aria-label="Cantidad para Tónicas variadas">
+        <button onclick="cambiarCantidadUI('cantidad-tonicas', 1)">➕</button>
+        <button onclick="agregarConCantidad('Tónicas variadas', 1.40, 'cantidad-tonicas')">Añadir</button>
+      </div>
+    </li>
+
+    <li class="menu-item">Red Bull – €1,80 ⚡
+      <div class="cantidad-control">
+        <button onclick="cambiarCantidadUI('cantidad-redbull', -1)">➖</button>
+        <input type="number" min="1" value="0" id="cantidad-redbull" readonly aria-label="Cantidad para Red Bull">
+        <button onclick="cambiarCantidadUI('cantidad-redbull', 1)">➕</button>
+        <button onclick="agregarConCantidad('Red Bull', 1.80, 'cantidad-redbull')">Añadir</button>
+      </div>
+    </li>
+
+    <li class="menu-item">Caña Estrella Galicia – €1,20
+      <div class="cantidad-control">
+        <button onclick="cambiarCantidadUI('cantidad-canaeg', -1)">➖</button>
+        <input type="number" min="1" value="0" id="cantidad-canaeg" readonly aria-label="Cantidad para Caña Estrella Galicia">
+        <button onclick="cambiarCantidadUI('cantidad-canaeg', 1)">➕</button>
+        <button onclick="agregarConCantidad('Caña Estrella Galicia', 1.20, 'cantidad-canaeg')">Añadir</button>
+      </div>
+    </li>
+
+    <li class="menu-item">Jarra Estrella Galicia – €1,80
+      <div class="cantidad-control">
+        <button onclick="cambiarCantidadUI('cantidad-jarraeg', -1)">➖</button>
+        <input type="number" min="1" value="0" id="cantidad-jarraeg" readonly aria-label="Cantidad para Jarra Estrella Galicia">
+        <button onclick="cambiarCantidadUI('cantidad-jarraeg', 1)">➕</button>
+        <button onclick="agregarConCantidad('Jarra Estrella Galicia', 1.80, 'cantidad-jarraeg')">Añadir</button>
+      </div>
+    </li>
+
+    <li class="menu-item">Caña 1906 – €1,80
+      <div class="cantidad-control">
+        <button onclick="cambiarCantidadUI('cantidad-cana1906', -1)">➖</button>
+        <input type="number" min="1" value="0" id="cantidad-cana1906" readonly aria-label="Cantidad para Caña 1906">
+        <button onclick="cambiarCantidadUI('cantidad-cana1906', 1)">➕</button>
+        <button onclick="agregarConCantidad('Caña 1906', 1.80, 'cantidad-cana1906')">Añadir</button>
+      </div>
+    </li>
+
+    <li class="menu-item">Heineken / Dorada / Cruzcampo – €1,50–€1,60
+      <div class="cantidad-control">
+        <button onclick="cambiarCantidadUI('cantidad-cervezas', -1)">➖</button>
+        <input type="number" min="1" value="0" id="cantidad-cervezas" readonly aria-label="Cantidad para Cervezas variadas">
+        <button onclick="cambiarCantidadUI('cantidad-cervezas', 1)">➕</button>
+        <button onclick="agregarConCantidad('Cervezas variadas', 1.60, 'cantidad-cervezas')">Añadir</button>
+      </div>
+    </li>
+
+    <li class="menu-item">Estrella Galicia Sin Gluten – €1,70 🌾
+      <div class="cantidad-control">
+        <button onclick="cambiarCantidadUI('cantidad-sin-gluten', -1)">➖</button>
+        <input type="number" min="1" value="0" id="cantidad-sin-gluten" readonly aria-label="Cantidad para Estrella Galicia Sin Gluten">
+        <button onclick="cambiarCantidadUI('cantidad-sin-gluten', 1)">➕</button>
+        <button onclick="agregarConCantidad('Estrella Galicia Sin Gluten', 1.70, 'cantidad-sin-gluten')">Añadir</button>
+      </div>
+    </li>
+
+        <li class="menu-item">Paulaner Naturtrüb / Dunkel – €2,50
+      <div class="cantidad-control">
+        <button onclick="cambiarCantidadUI('cantidad-paulaner', -1)">➖</button>
+        <input type="number" min="1" value="0" id="cantidad-paulaner" readonly aria-label="Cantidad para Paulaner Naturtrüb / Dunkel">
+        <button onclick="cambiarCantidadUI('cantidad-paulaner', 1)">➕</button>
+        <button onclick="agregarConCantidad('Paulaner Naturtrüb / Dunkel', 2.50, 'cantidad-paulaner')">Añadir</button>
+      </div>
+    </li>
+
+    <li class="menu-item">Vino tinto / blanco / afrutado – €1,80–€2,00
+      <div class="cantidad-control">
+        <button onclick="cambiarCantidadUI('cantidad-vino', -1)">➖</button>
+        <input type="number" min="1" value="0" id="cantidad-vino" readonly aria-label="Cantidad para Vino tinto / blanco / afrutado">
+        <button onclick="cambiarCantidadUI('cantidad-vino', 1)">➕</button>
+        <button onclick="agregarConCantidad('Vino tinto / blanco / afrutado', 2.00, 'cantidad-vino')">Añadir</button>
+      </div>
+    </li>
+
+    <li class="menu-item">Caipirinha / Mojito clásico / Mojito frutas – €4,00
+      <div class="cantidad-control">
+        <button onclick="cambiarCantidadUI('cantidad-cocteles', -1)">➖</button>
+        <input type="number" min="1" value="0" id="cantidad-cocteles" readonly aria-label="Cantidad para Cócteles variados">
+        <button onclick="cambiarCantidadUI('cantidad-cocteles', 1)">➕</button>
+        <button onclick="agregarConCantidad('Cócteles variados', 4.00, 'cantidad-cocteles')">Añadir</button>
+      </div>
+    </li>
+
+    <li class="menu-item">Chupito – €1,00
+      <div class="cantidad-control">
+        <button onclick="cambiarCantidadUI('cantidad-chupito', -1)">➖</button>
+        <input type="number" min="1" value="0" id="cantidad-chupito" readonly aria-label="Cantidad para Chupito">
+        <button onclick="cambiarCantidadUI('cantidad-chupito', 1)">➕</button>
+        <button onclick="agregarConCantidad('Chupito', 1.00, 'cantidad-chupito')">Añadir</button>
+      </div>
+    </li>
+
+    <li class="menu-item">Combinado – €4,30
+      <div class="cantidad-control">
+        <button onclick="cambiarCantidadUI('cantidad-combinado', -1)">➖</button>
+        <input type="number" min="1" value="0" id="cantidad-combinado" readonly aria-label="Cantidad para Combinado">
+        <button onclick="cambiarCantidadUI('cantidad-combinado', 1)">➕</button>
+        <button onclick="agregarConCantidad('Combinado', 4.30, 'cantidad-combinado')">Añadir</button>
+      </div>
+    </li>
+
+    <li class="menu-item">Licores – €2,50
+      <div class="cantidad-control">
+        <button onclick="cambiarCantidadUI('cantidad-licores', -1)">➖</button>
+        <input type="number" min="1" value="0" id="cantidad-licores" readonly aria-label="Cantidad para Licores">
+        <button onclick="cambiarCantidadUI('cantidad-licores', 1)">➕</button>
+        <button onclick="agregarConCantidad('Licores', 2.50, 'cantidad-licores')">Añadir</button>
+      </div>
+    </li>
+
+  </ol>
+</section>
+
+
+<script src="assets/scripts/main.js" defer></script>

@@ -187,3 +187,37 @@ footer a:hover {
   background-color: #c2a98c;
 }
 
+/*botones del ticket*/
+.cantidad-ticket {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
+  margin-left: 1em;
+}
+
+.cantidad-ticket button {
+  padding: 0.2em 0.6em;
+  font-size: 0.6em;
+  border: none;
+  background-color: #d8bfa3;
+  color: #4B2E2E;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.cantidad-ticket button:hover {
+  background-color: #c2a98c;
+}
+
+.mesa-input {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.mesa-input span {
+  font-weight: bold;
+  color: #4B2E2E;
+}
+
