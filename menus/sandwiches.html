@@ -1,101 +1,68 @@
 <link rel="stylesheet" href="assets/styles/style.css">
+<section id="sandwiches">
+  <h2>🥪 Sandwiches</h2>
+  <ol class="sandwiches-lista">
+    <li class="menu-item alergeno-lacteos alergeno-gluten">
+      Mixto – €1,60 🥛 🌾
+      <div class="cantidad-control">
+        <button onclick="cambiarCantidadUI('cantidad-mixto', -1)">➖</button>
+        <input type="number" min="1" value="0" id="cantidad-mixto" readonly aria-label="Cantidad para Sandwich Mixto">
+        <button onclick="cambiarCantidadUI('cantidad-mixto', 1)">➕</button>
+        <button onclick="agregarConCantidad('Sandwich Mixto', 1.60, 'cantidad-mixto', this)">Añadir</button>
+      </div>
+    </li>
 
-<section id="cafe">
-  <h2>☕ Café</h2>
-  <ol class="cafes-lista">
-    <li class="menu-item alergeno-lacteos">
-  Café con leche largo – €1,40 🥛
-  <div class="cantidad-control">
-    <button onclick="cambiarCantidadUI('cantidad-lechelargo', -1)">➖</button>
-    <input type="number" min="1" value="0" id="cantidad-lechelargo" readonly aria-label="Cantidad para Café con leche largo">
-    <button onclick="cambiarCantidadUI('cantidad-lechelargo', 1)">➕</button>
-    <button onclick="agregarConCantidad('Café con leche/largo', 1.40, 'cantidad-lechelargo')">Añadir</button>
-  </div>
-</li>
+    <li class="menu-item alergeno-lacteos alergeno-gluten">
+      Queso Blanco – €2,40 🥛 🌾
+      <div class="cantidad-control">
+        <button onclick="cambiarCantidadUI('cantidad-quesoblanco', -1)">➖</button>
+        <input type="number" min="1" value="0" id="cantidad-quesoblanco" readonly aria-label="Cantidad para Sandwich Queso Blanco">
+        <button onclick="cambiarCantidadUI('cantidad-quesoblanco', 1)">➕</button>
+        <button onclick="agregarConCantidad('Sandwich Queso Blanco', 2.40, 'cantidad-quesoblanco', this)">Añadir</button>
+      </div>
+    </li>
 
-<li class="menu-item alergeno-lacteos">
-  Barraquito con licor – €1,80 🥛
-  <div class="cantidad-control">
-    <button onclick="cambiarCantidadUI('cantidad-barraquito', -1)">➖</button>
-    <input type="number" min="1" value="0" id="cantidad-barraquito" readonly aria-label="Cantidad para Barraquito con licor">
-    <button onclick="cambiarCantidadUI('cantidad-barraquito', 1)">➕</button>
-    <button onclick="agregarConCantidad('Barraquito con licor', 1.80, 'cantidad-barraquito')">Añadir</button>
-  </div>
-</li>
+    <li class="menu-item alergeno-gluten">
+      Pollo – €2,20 🌾
+      <div class="cantidad-control">
+        <button onclick="cambiarCantidadUI('cantidad-pollo', -1)">➖</button>
+        <input type="number" min="1" value="0" id="cantidad-pollo" readonly aria-label="Cantidad para Sandwich Pollo">
+        <button onclick="cambiarCantidadUI('cantidad-pollo', 1)">➕</button>
+        <button onclick="agregarConCantidad('Sandwich Pollo', 2.20, 'cantidad-pollo', this)">Añadir</button>
+      </div>
+    </li>
 
-<li class="menu-item alergeno-lacteos">
-  Shakerato – €1,50
-  <div class="cantidad-control">
-    <button onclick="cambiarCantidadUI('cantidad-shakerato', -1)">➖</button>
-    <input type="number" min="1" value="0" id="cantidad-shakerato" readonly aria-label="Cantidad para Shakerato">
-    <button onclick="cambiarCantidadUI('cantidad-shakerato', 1)">➕</button>
-    <button onclick="agregarConCantidad('Shakerato', 1.50, 'cantidad-shakerato')">Añadir</button>
-  </div>
-</li>
+    <li class="menu-item alergeno-lacteos alergeno-gluten">
+      Vegetariano – €2,90 🥛 🌾
+      <div class="cantidad-control">
+        <button onclick="cambiarCantidadUI('cantidad-vegetariano', -1)">➖</button>
+        <input type="number" min="1" value="0" id="cantidad-vegetariano" readonly aria-label="Cantidad para Sandwich Vegetariano">
+        <button onclick="cambiarCantidadUI('cantidad-vegetariano', 1)">➕</button>
+        <button onclick="agregarConCantidad('Sandwich Vegetariano', 2.90, 'cantidad-vegetariano', this)">Añadir</button>
+      </div>
+    </li>
 
-<li class="menu-item alergeno-lacteos">
-  Affogato al café – €2,00 🥛
-  <div class="cantidad-control">
-    <button onclick="cambiarCantidadUI('cantidad-affogato', -1)">➖</button>
-    <input type="number" min="1" value="0" id="cantidad-affogato" readonly aria-label="Cantidad para Affogato al café">
-    <button onclick="cambiarCantidadUI('cantidad-affogato', 1)">➕</button>
-    <button onclick="agregarConCantidad('Affogato al café', 2.00, 'cantidad-affogato')">Añadir</button>
-  </div>
-</li>
+    <li class="menu-item vegano">
+      Vegano de Tofu – €3,00 🌱
+      <div class="cantidad-control">
+        <button onclick="cambiarCantidadUI('cantidad-tofu', -1)">➖</button>
+        <input type="number" min="1" value="0" id="cantidad-tofu" readonly aria-label="Cantidad para Sandwich Vegano de Tofu">
+        <button onclick="cambiarCantidadUI('cantidad-tofu', 1)">➕</button>
+        <button onclick="agregarConCantidad('Sandwich Vegano de Tofu', 3.00, 'cantidad-tofu', this)">Añadir</button>
+      </div>
+    </li>
 
-<li class="menu-item alergeno-lacteos">
-  Frappé de café – €2,50 🥛
-  <div class="cantidad-control">
-    <button onclick="cambiarCantidadUI('cantidad-frappe', -1)">➖</button>
-    <input type="number" min="1" value="0" id="cantidad-frappe" readonly aria-label="Cantidad para Frappé de café">
-    <button onclick="cambiarCantidadUI('cantidad-frappe', 1)">➕</button>
-    <button onclick="agregarConCantidad('Frappé de café', 2.50, 'cantidad-frappe')">Añadir</button>
-  </div>
-</li>
-
-<li class="menu-item alergeno-lacteos">
-  Patagonia Nocciola – €2,50 🥛
-  <div class="cantidad-control">
-    <button onclick="cambiarCantidadUI('cantidad-nocciola', -1)">➖</button>
-    <input type="number" min="1" value="0" id="cantidad-nocciola" readonly aria-label="Cantidad para Patagonia Nocciola">
-    <button onclick="cambiarCantidadUI('cantidad-nocciola', 1)">➕</button>
-    <button onclick="agregarConCantidad('Patagonia Nocciola', 2.50, 'cantidad-nocciola')">Añadir</button>
-  </div>
-</li>
-
-<li class="menu-item alergeno-lacteos">
-  Irish Coffee – €3,50 🥛
-  <div class="cantidad-control">
-    <button onclick="cambiarCantidadUI('cantidad-irish', -1)">➖</button>
-    <input type="number" min="1" value="0" id="cantidad-irish" readonly aria-label="Cantidad para Irish Coffee">
-    <button onclick="cambiarCantidadUI('cantidad-irish', 1)">➕</button>
-    <button onclick="agregarConCantidad('Irish Coffee', 3.50, 'cantidad-irish')">Añadir</button>
-  </div>
-</li>
-
-<li class="menu-item alergeno-lacteos">
-  Cola Cao – €1,50 🥛
-  <div class="cantidad-control">
-    <button onclick="cambiarCantidadUI('cantidad-colacao', -1)">➖</button>
-    <input type="number" min="1" value="0" id="cantidad-colacao" readonly aria-label="Cantidad para Cola Cao">
-    <button onclick="cambiarCantidadUI('cantidad-colacao', 1)">➕</button>
-    <button onclick="agregarConCantidad('Cola Cao', 1.50, 'cantidad-colacao')">Añadir</button>
-  </div>
-</li>
-
-<li class="menu-item">
-  Infusiones Tea of Life – €1,50
-  <div class="cantidad-control">
-    <button onclick="cambiarCantidadUI('cantidad-teaoflife', -1)">➖</button>
-    <input type="number" min="1" value="0" id="cantidad-teaoflife" readonly aria-label="Cantidad para Infusiones Tea of Life">
-    <button onclick="cambiarCantidadUI('cantidad-teaoflife', 1)">➕</button>
-    <button onclick="agregarConCantidad('Infusiones Tea of Life', 1.50, 'cantidad-teaoflife')">Añadir</button>
-  </div>
-</li>
-
-
-    <!-- Puedes replicar este bloque para todos los demás productos cambiando el ID y los valores -->
+    <li class="menu-item alergeno-lacteos alergeno-huevo alergeno-gluten">
+      Triple – €3,00 🥛 🥚 🌾
+      <div class="cantidad-control">
+        <button onclick="cambiarCantidadUI('cantidad-triple', -1)">➖</button>
+        <input type="number" min="1" value="0" id="cantidad-triple" readonly aria-label="Cantidad para Sandwich Triple">
+        <button onclick="cambiarCantidadUI('cantidad-triple', 1)">➕</button>
+        <button onclick="agregarConCantidad('Sandwich Triple', 3.00, 'cantidad-triple', this)">Añadir</button>
+      </div>
+    </li>
   </ol>
 </section>
+
 
 <script src="assets/scripts/main.js" defer></script>

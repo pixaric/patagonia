@@ -1,6 +1,6 @@
 let pedido = [];
 
-function agregarAlPedido(nombre, precio) {
+function agregarAlPedido(nombre, precio, boton) {
   const existente = pedido.find(p => p.nombre === nombre);
   if (existente) {
     existente.cantidad += 1;
@@ -10,7 +10,22 @@ function agregarAlPedido(nombre, precio) {
 
   actualizarResumen();
   generarQR();
+
+  // ✅ Cambiar estilo del botón
+  if (boton) {
+    boton.textContent = "✔ Añadido";
+    boton.style.backgroundColor = "#4CAF50"; // verde
+    boton.style.color = "#fff";
+
+    // ✅ Restaurar después de 2 segundos
+    setTimeout(() => {
+      boton.textContent = "Añadir";
+      boton.style.backgroundColor = "#c49a6c"; // color original
+      boton.style.color = "#fff";
+    }, 2000);
+  }
 }
+
 
 function actualizarResumen() {
   const lista = document.getElementById("listaPedido");

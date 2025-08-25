@@ -1,0 +1,38 @@
+<link rel="stylesheet" href="assets/styles/style.css">
+
+<section id="hamburguesas">
+  <h2>🍔 Hamburguesas (con papas Deluxe)</h2>
+  <ol class="tostadas-lista">
+    <li class="menu-item alergeno-gluten alergeno-lacteos">
+      Clásica – €3,80 🌾 🥛
+      <div class="cantidad-control">
+        <button onclick="cambiarCantidadUI('cantidad-hamburguesa-clasica', -1)">➖</button>
+        <input type="number" min="1" value="0" id="cantidad-hamburguesa-clasica" readonly aria-label="Cantidad para Hamburguesa Clásica">
+        <button onclick="cambiarCantidadUI('cantidad-hamburguesa-clasica', 1)">➕</button>
+        <button onclick="agregarConCantidad('Hamburguesa Clásica', 3.80, 'cantidad-hamburguesa-clasica', this)">Añadir</button>
+      </div>
+    </li>
+
+    <li class="menu-item alergeno-gluten alergeno-lacteos">
+      Especial – €4,90 🌾 🥛
+      <div class="cantidad-control">
+        <button onclick="cambiarCantidadUI('cantidad-hamburguesa-especial', -1)">➖</button>
+        <input type="number" min="1" value="0" id="cantidad-hamburguesa-especial" readonly aria-label="Cantidad para Hamburguesa Especial">
+        <button onclick="cambiarCantidadUI('cantidad-hamburguesa-especial', 1)">➕</button>
+        <button onclick="agregarConCantidad('Hamburguesa Especial', 4.90, 'cantidad-hamburguesa-especial', this)">Añadir</button>
+      </div>
+    </li>
+
+    <li class="menu-item vegano alergeno-gluten">
+      Patagonia – €6,00 🌱 🌾
+      <div class="cantidad-control">
+        <button onclick="cambiarCantidadUI('cantidad-hamburguesa-patagonia', -1)">➖</button>
+        <input type="number" min="1" value="0" id="cantidad-hamburguesa-patagonia" readonly aria-label="Cantidad para Hamburguesa Patagonia">
+        <button onclick="cambiarCantidadUI('cantidad-hamburguesa-patagonia', 1)">➕</button>
+        <button onclick="agregarConCantidad('Hamburguesa Patagonia', 6.00, 'cantidad-hamburguesa-patagonia', this)">Añadir</button>
+      </div>
+    </li>
+  </ol>
+</section>
+
+<script src="assets/scripts/main.js" defer></script>

@@ -127,23 +127,34 @@ header {
 }
 
 
+
 .header-container {
   display: flex;
+  justify-content: space-between; /* Título a la izquierda, botón a la derecha */
   align-items: center;
-  justify-content: space-between;
-  padding: 0 1rem;
+  padding: 0.5rem 1rem;
 }
 
 header h1 {
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   color: var(--cafe-medio);
   margin: 0;
   flex: 1;
   
 }
 
+
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  
+}
+
+
 .menu-toggle {
-  position: relative; /* ← ya no es fixed */
   font-size: 1.8rem;
   background-color: var(--cafe-claro);
   border: none;
@@ -151,7 +162,15 @@ header h1 {
   padding: 0.4rem 0.6rem;
   cursor: pointer;
   box-shadow: 0 2px 4px var(--sombra-suave);
+  transition: background-color 0.3s ease;
+  
 }
+
+.menu-toggle:hover {
+  background-color: var(--cafe-medio);
+}
+
+
 
 
 /* 🧭 Navegación */
@@ -212,22 +231,20 @@ body.menu-abierto {
 
 
 
-/* 📱 Responsive menú para móviles */
 @media (max-width: 768px) {
   .header-container {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-  }
-
-  .cabecera {
-    padding: 0.5rem;
+    padding: 0.5rem 1rem;
   }
 
   .menu-toggle {
     display: block;
-    margin: 0 auto 1rem;
+    margin-right: 0.5rem; /* ✅ también en móviles */
   }
+}
+
 
   
 
@@ -238,7 +255,7 @@ body.menu-abierto {
   .nav-links li {
     flex: 0 0 auto;
   }
-}
+
 
 
 /* filtro alergenos */

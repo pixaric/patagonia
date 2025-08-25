@@ -16,9 +16,10 @@
   <header class="cabecera">
   <div class="header-container">
     <h1>CAFÉ PATAGONIA</h1>
-    </div>
-    
-<button class="menu-toggle" onclick="toggleMenu()">☰</button>
+    <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+  </div>
+</header>
+
 
 <nav class="menu-lateral" id="menuLateral">
   <ul class="nav-links">
@@ -100,93 +101,103 @@
 </script>
 
 <!-- smoothies -->
-<section id="smoothies">
-  <h2>🍹 Smoothies</h2>
-  <ol class="jugos-lista">
-    <li class="menu-item">Naranja / Papaya / Plátano / Fresa – €2,50 <button onclick="agregarAlPedido('Smoothie Naranja / Papaya / Plátano / Fresa', 2.50)">Añadir</button></li>
-    <li class="menu-item">Frutas del bosque / Maracuyá / Mango / Melón / Guayaba / Guanábana – €2,60 <button onclick="agregarAlPedido('Smoothie Frutas del bosque / Maracuyá / Mango / Melón / Guayaba / Guanábana', 2.60)">Añadir</button></li>
-    <li class="menu-item">Coco Verde – €2,80 <button onclick="agregarAlPedido('Smoothie Coco Verde', 2.80)">Añadir</button></li>
-  </ol>
-</section>
+<div id="smoothies"></div>
+<script>
+  fetch("menus/smoothies.html")
+    .then(res => res.text())
+    .then(html => {
+      document.getElementById("smoothies").innerHTML = html;
+    })
+    .catch(err => {
+      console.error("Error al cargar el menú de smoothies:", err);
+    });
+</script>
 
 <!-- desayunos -->
+<div id="desayunos"></div>
+<script>
+  fetch("menus/desayunos.html")
+    .then(res => res.text())
+    .then(html => {
+      document.getElementById("desayunos").innerHTML = html;
+    })
+    .catch(err => {
+      console.error("Error al cargar el menú de desayunos:", err);
+    });
+</script>
 
-   <section id="desayunos">
-  <h2>🍳 Desayunos (hasta las 13:00)</h2>
-  <ol class="bocadillos-lista">
-    <li class="menu-item alergeno-harina alergeno-lacteos">Tradicional – €3,00 🥐 🥛 <button onclick="agregarAlPedido('Desayuno Tradicional', 3.00)">Añadir</button></li>
-    <li class="menu-item alergeno-lacteos alergeno-frutos">Queso crema – €3,20 🥛 🥜 <button onclick="agregarAlPedido('Desayuno Queso crema', 3.20)">Añadir</button></li>
-    <li class="menu-item alergeno-gluten">Saludable – €3,50 🌾 <button onclick="agregarAlPedido('Desayuno Saludable', 3.50)">Añadir</button></li>
-    <li class="menu-item vegano">Hummus – €3,60 🌱 <button onclick="agregarAlPedido('Desayuno Hummus', 3.60)">Añadir</button></li>
-    <li class="menu-item alergeno-gluten">Ibérico – €3,70 🌾 <button onclick="agregarAlPedido('Desayuno Ibérico', 3.70)">Añadir</button></li>
-  </ol>
-</section>
 
 
 <!-- sandwiches -->
     
-    <section id="sandwiches">
-  <h2>🥪 Sandwiches</h2>
-  <ol class="sandwiches-lista">
-    <li class="menu-item alergeno-lacteos alergeno-gluten">Mixto – €1,60 🥛 🌾 <button onclick="agregarAlPedido('Sandwich Mixto', 1.60)">Añadir</button></li>
-    <li class="menu-item alergeno-lacteos alergeno-gluten">Queso Blanco – €2,40 🥛 🌾 <button onclick="agregarAlPedido('Sandwich Queso Blanco', 2.40)">Añadir</button></li>
-    <li class="menu-item alergeno-gluten">Pollo – €2,20 🌾 <button onclick="agregarAlPedido('Sandwich Pollo', 2.20)">Añadir</button></li>
-    <li class="menu-item alergeno-lacteos alergeno-gluten">Vegetariano – €2,90 🥛 🌾 <button onclick="agregarAlPedido('Sandwich Vegetariano', 2.90)">Añadir</button></li>
-    <li class="menu-item vegano">Vegano de Tofu – €3,00 🌱 <button onclick="agregarAlPedido('Sandwich Vegano de Tofu', 3.00)">Añadir</button></li>
-    <li class="menu-item alergeno-lacteos alergeno-huevo alergeno-gluten">Triple – €3,00 🥛 🥚 🌾 <button onclick="agregarAlPedido('Sandwich Triple', 3.00)">Añadir</button></li>
-  </ol>
-</section>
+    <div id="sandwiches"></div>
+<script>
+  fetch("menus/sandwiches.html")
+    .then(res => res.text())
+    .then(html => {
+      document.getElementById("sandwiches").innerHTML = html;
+    })
+    .catch(err => {
+      console.error("Error al cargar el menú de sandwiches:", err);
+    });
+</script>
 
     <!-- 🥗 ENSALADAS -->
-<section id="ensaladas">
-  <h2>🥗 Ensaladas</h2>
-  <ol class="wraps-lista">
-    <li class="menu-item">Pollo – €4,70 <button onclick="agregarAlPedido('Ensalada Pollo', 4.70)">Añadir</button></li>
-    <li class="menu-item alergeno-lacteos alergeno-frutos">Galileo – €4,70 🥛 🥜 <button onclick="agregarAlPedido('Ensalada Galileo', 4.70)">Añadir</button></li>
-    <li class="menu-item vegano alergeno-frutos">Darwin – €4,95 🌱 🥜 <button onclick="agregarAlPedido('Ensalada Darwin', 4.95)">Añadir</button></li>
-  </ol>
-</section>
+<div id="ENSALADAS"></div>
+<script>
+  fetch("menus/ENSALADAS.html")
+    .then(res => res.text())
+    .then(html => {
+      document.getElementById("ENSALADAS").innerHTML = html;
+    })
+    .catch(err => {
+      console.error("Error al cargar el menú de ENSALADAS:", err);
+    });
+</script>
 
 
     <!-- 🍔 HAMBURGUESAS -->
-    <section id="hamburguesas">
-  <h2>🍔 Hamburguesas (con papas Deluxe)</h2>
-  <ol class="tostadas-lista">
-    <li class="menu-item alergeno-gluten alergeno-lacteos">Clásica – €3,80 🌾 🥛 <button onclick="agregarAlPedido('Hamburguesa Clásica', 3.80)">Añadir</button></li>
-    <li class="menu-item alergeno-gluten alergeno-lacteos">Especial – €4,90 🌾 🥛 <button onclick="agregarAlPedido('Hamburguesa Especial', 4.90)">Añadir</button></li>
-    <li class="menu-item vegano alergeno-gluten">Patagonia – €6,00 🌱 🌾 <button onclick="agregarAlPedido('Hamburguesa Patagonia', 6.00)">Añadir</button></li>
-  </ol>
-</section>
+    <div id="HAMBURGUESAS"></div>
+<script>
+  fetch("menus/HAMBURGUESAS.html")
+    .then(res => res.text())
+    .then(html => {
+      document.getElementById("HAMBURGUESAS").innerHTML = html;
+    })
+    .catch(err => {
+      console.error("Error al cargar el menú de HAMBURGUESAS:", err);
+    });
+</script>
 
 
-    <!-- 🥖 BOCADILLOS -->
-   <section id="bocadillos">
-  <h2>🥖 Bocadillos</h2>
-  <ol class="bocadillos-lista">
-    <li class="menu-item alergeno-gluten alergeno-lacteos">Pollo – €1,50 / €2,70 🌾 🥛 <button onclick="agregarAlPedido('Bocadillo Pollo', 2.70)">Añadir</button></li>
-    <li class="menu-item alergeno-gluten">Jamón Serrano – €1,60 / €2,80 🌾 <button onclick="agregarAlPedido('Bocadillo Jamón Serrano', 2.80)">Añadir</button></li>
-    <li class="menu-item alergeno-gluten alergeno-lacteos">Pata Asada – €1,70 / €2,90 🌾 🥛 <button onclick="agregarAlPedido('Bocadillo Pata Asada', 2.90)">Añadir</button></li>
-    <li class="menu-item alergeno-gluten alergeno-lacteos">Vegetariano – €1,90 / €3,20 🥛 🌾 <button onclick="agregarAlPedido('Bocadillo Vegetariano', 3.20)">Añadir</button></li>
-    <li class="menu-item vegano alergeno-gluten">Vegano de Tofu – €2,00 / €3,30 🌱 🌾 <button onclick="agregarAlPedido('Bocadillo Vegano de Tofu', 3.30)">Añadir</button></li>
-    <li class="menu-item vegano alergeno-gluten">Vegano de Tempeh – €2,00 / €3,30 🌱 🌾 <button onclick="agregarAlPedido('Bocadillo Vegano de Tempeh', 3.30)">Añadir</button></li>
-  </ol>
-</section>
+    <!--bocadillos -->
+    <div id="bocadillos"></div>
+
+  <script>
+  fetch("menus/bocadillos.html")
+    .then(res => res.text())
+    .then(html => {
+      document.getElementById("bocadillos").innerHTML = html;
+    })
+    .catch(err => {
+      console.error("Error al cargar el menú de bocadillos:", err);
+    });
+</script>
 
 
     <!-- 🍢 PARA PICAR -->
-    <section id="picar">
-  <h2>🍢 Para Picar</h2>
-  <ol class="snacks-lista">
-    <li class="menu-item alergeno-gluten">Nachos – €3,00 🌾 <button onclick="agregarAlPedido('Nachos', 3.00)">Añadir</button></li>
-    <li class="menu-item alergeno-gluten">Deluxe – €3,00 🌾 <button onclick="agregarAlPedido('Deluxe', 3.00)">Añadir</button></li>
-    <li class="menu-item alergeno-lacteos">Papas locas – €3,50 🥛 <button onclick="agregarAlPedido('Papas locas', 3.50)">Añadir</button></li>
-    <li class="menu-item alergeno-lacteos">Papas cheddar – €3,50 🥛 <button onclick="agregarAlPedido('Papas cheddar', 3.50)">Añadir</button></li>
-    <li class="menu-item alergeno-lacteos">Papas bacon – €3,50 🥛 <button onclick="agregarAlPedido('Papas bacon', 3.50)">Añadir</button></li>
-    <li class="menu-item vegano">Papas tempeh – €3,50 🌱 <button onclick="agregarAlPedido('Papas tempeh', 3.50)">Añadir</button></li>
-    <li class="menu-item vegano">Papas tofu – €3,50 🌱 <button onclick="agregarAlPedido('Papas tofu', 3.50)">Añadir</button></li>
-    <li class="menu-item vegano">Hummus – €4,50 🌱 <button onclick="agregarAlPedido('Hummus', 4.50)">Añadir</button></li>
-  </ol>
-</section>
+      <div id="picar"></div>
+
+  <script>
+  fetch("menus/picar.html")
+    .then(res => res.text())
+    .then(html => {
+      document.getElementById("picar").innerHTML = html;
+    })
+    .catch(err => {
+      console.error("Error al cargar el menú de picar:", err);
+    });
+</script>
 
   </main>
 
