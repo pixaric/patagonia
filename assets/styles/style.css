@@ -28,7 +28,7 @@ body::-webkit-scrollbar {
   display: none; /* Chrome, Safari */
 }
 
-/* 🧭 Encabezado */
+/* 🧭 Encabezado 
 .cabecera {
   background-color: var(--cafe-claro);
   padding: 0.5rem 0.1rem 0.1rem;
@@ -45,7 +45,17 @@ body::-webkit-scrollbar {
   box-shadow: 0 2px 6px var(--sombra-suave);
   padding: 0.3rem 1rem;
 }
-
+*/
+.cabecera {
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  background-color: var(--cafe-claro);
+  border-bottom: 2px solid var(--blanco);
+  box-shadow: 0 2px 6px var(--sombra-suave);
+  padding: 0.4rem 1rem 0.2rem;
+  text-align: center;
+}
 
 
 
