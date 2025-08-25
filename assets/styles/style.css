@@ -28,6 +28,10 @@ body::-webkit-scrollbar {
   display: none; /* Chrome, Safari */
 }
 
+html, body {
+  overflow-x: hidden;
+}
+
 /* 🧭 Encabezado 
 .cabecera {
   background-color: var(--cafe-claro);
@@ -53,29 +57,58 @@ body::-webkit-scrollbar {
   background-color: var(--cafe-claro);
   border-bottom: 2px solid var(--blanco);
   box-shadow: 0 2px 6px var(--sombra-suave);
-  padding: 0.4rem 1rem 0.2rem;
+  padding: 0.4rem 0.8rem; /* ← más compacto y equilibrado */
   text-align: center;
+  overflow-x: hidden;     /* ← evita que el contenido se desborde horizontalmente */
 }
+
 
 
 
 .header-container {
+  position: relative;
   display: flex;
-  justify-content: space-between; /* Título a la izquierda, botón a la derecha */
+  justify-content: center;
   align-items: center;
-  padding: 0.5rem 1rem;
+  padding: 0.4rem 0.8rem;
   width: 100%;
+  box-sizing: border-box;
 }
+
+
 
 
 
 header h1 {
-  font-size: 1.4rem;
+  font-size: 1.2rem; /* más pequeño que antes, pero legible */
   color: var(--cafe-medio);
-  margin: 0;
-  flex: 1;
-  
+  margin: 0 auto;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
+
+
+@media (max-width: 480px) {
+  .header-container h1 {
+    font-size: 1.1rem;             /* tamaño reducido para móviles */
+    line-height: 1.2;
+    white-space: nowrap;         /* evita salto de línea */
+    overflow: hidden;
+    text-overflow: ellipsis;     /* añade "..." si se corta */
+    margin: 0 auto;
+    text-align: center;
+    max-width: 70%;              /* evita que se extienda demasiado */
+  }
+
+  .menu-toggle {
+    font-size: 1.4rem;           /* también más pequeño en móviles */
+    padding: 0.3rem 0.5rem;
+  }
+}
+
+
 
 .menu-toggle {
   font-size: 1.8rem;
